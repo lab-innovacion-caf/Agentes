@@ -1,4 +1,4 @@
-# 🤖 Lya: Agente de asistencia de DSLA
+# 🤖 Repositorio de Agentes en Copilot Studio
 
 ![License](https://img.shields.io/badge/license-MIT-informational)
 ![Contributions](https://img.shields.io/badge/contributions-welcome-success)
@@ -6,155 +6,138 @@
 ![Issues](https://img.shields.io/github/issues/OWNER/REPO)
 ![Stars](https://img.shields.io/github/stars/OWNER/REPO)
 
-> **Lya** (AI-DSLA-01) es un **agente institucional desarrollado en Copilot Studio** para la DSLA. Su función principal es responder consultas sobre los servicios logísticos y administrativos, y derivar la atención a **sub-agentes especializados por servicio**.
-
----
-
-## 📹 Demo rápida
-
-* **Video/GIF**: `./media/demo.gif`
-* **Demo en vivo**: [URL\_DEMO](https://example.com)
+> Este repositorio centraliza todos los **agentes desarrollados en Microsoft Copilot Studio**. Cada agente cuenta con su propio directorio, documentación, ejemplos y flujos exportables en JSON para facilitar su despliegue y colaboración.
 
 ---
 
 ## 🧭 Tabla de contenidos
 
-* [¿Qué hace Lya?](#-qué-hace-lya)
-* [Historia y desarrollo](#-historia-y-desarrollo)
-* [Arquitectura y funcionamiento](#-arquitectura-y-funcionamiento)
+* [¿Qué es este repositorio?](#-qué-es-este-repositorio)
+* [Estructura del repositorio](#-estructura-del-repositorio)
+* [Agentes incluidos](#-agentes-incluidos)
+* [Cómo empezar](#-cómo-empezar)
+* [Arquitectura general](#-arquitectura-general)
 * [Guía de prompts](#-guía-de-prompts)
 * [Despliegue en Copilot Studio](#-despliegue-en-copilot-studio)
 * [Pruebas y calidad](#-pruebas-y-calidad)
 * [Roadmap](#-roadmap)
 * [Contribuir](#-contribuir)
-* [FAQ](#-faq)
 * [Licencia](#-licencia)
 
 ---
 
-## 🧩 ¿Qué hace Lya?
+## 📌 ¿Qué es este repositorio?
 
-* Muestra información de los servicios que ofrece la **DSLA**.
-* Crea un **sub-agente por cada servicio**, permitiendo modularizar la atención.
-* Funciona como un asistente institucional formal, cálido y profesional.
-* Personaliza respuestas incluyendo el **nombre del usuario**.
-* Presenta antes de cada respuesta un **resumen en lista de temas**.
-* Responde únicamente con los servicios oficiales de la DSLA.
-* Consulta información exclusiva del **SharePoint institucional** para dar más detalles.
+Un espacio abierto y colaborativo para:
 
----
-
-## 🛠️ Historia y desarrollo
-
-* Lya está registrada como **AI-DSLA-01** en el archivo institucional de agentes.
-* Se desarrolló como parte de las iniciativas de **agentes institucionales en Copilot Studio**.
-* Fue creado de manera colaborativa, con participación de **Raymond (autor principal)**, **Braulio Salazar (gerente)** y el equipo DSLA.
-* El proyecto evolucionó a través de correos, notas técnicas y archivos compartidos, con iteraciones frecuentes.
+* Documentar agentes creados en **Copilot Studio**.
+* Compartir flujos y ejemplos reutilizables.
+* Facilitar la replicación de agentes en otras instituciones.
+* Impulsar estándares de calidad en agentes conversacionales.
 
 ---
 
-## 🧠 ¿Qué lo hace especial?
+## 🗂️ Estructura del repositorio
 
-* Estilo formal, cálido y profesional.
-* Respuestas personalizadas con el nombre del usuario.
-* Uso de fuentes oficiales (imagen institucional de la DSLA y SharePoint).
-* Modularización en sub-agentes para cada servicio, lo que facilita la escalabilidad.
+```text
+.
+├─ agents/                       # directorio principal de agentes
+│  ├─ lya/                        # agente institucional DSLA
+│  │  ├─ flows/                   # flujos exportados de Copilot Studio (JSON)
+│  │  ├─ prompts/                 # prompts del sistema/usuario
+│  │  ├─ examples/                # entradas y salidas de ejemplo
+│  │  ├─ tests/                   # pruebas unitarias/contrato
+│  │  └─ README.md                # doc específica del agente
+│  └─ <otro-agente>/
+├─ docs/                          # guías y documentación general
+├─ media/                         # imágenes, diagramas, gifs
+├─ scripts/                       # scripts de soporte (ejecución, validación)
+├─ .github/workflows/             # CI/CD
+├─ LICENSE
+└─ README.md                      # este archivo
+```
 
 ---
 
-## 🛠️ Arquitectura y funcionamiento
+## 🤖 Agentes incluidos
 
-### Vista general
+* **Lya (AI-DSLA-01)** — Asistente institucional de la DSLA, responde consultas sobre servicios logísticos y administrativos, y deriva a sub-agentes por servicio.
+* *(Próximamente: más agentes a documentar)*
+
+---
+
+## ⏱️ Cómo empezar
+
+```bash
+# 1) Clona el repo
+git clone https://github.com/OWNER/REPO.git
+cd REPO
+
+# 2) Explora los agentes
+tree agents/
+
+# 3) Abre el agente que quieras probar
+code agents/lya/
+```
+
+---
+
+## 🛠️ Arquitectura general
 
 ```mermaid
 flowchart LR
-    U[Usuario] --> P[Pregunta]
-    P --> L[Lya]
-    L -->|Derivación| S[Sub-agente de servicio]
-    S --> R[Respuesta especializada]
+    U[Usuario] --> A[Agente]
+    A --> F[Flujo Copilot Studio]
+    F --> C[Conectores / Acciones]
+    C --> D[Fuentes de Datos]
+    A --> R[Respuesta]
     R --> U
-```
-
-### Secuencia
-
-```mermaid
-sequenceDiagram
-    participant Usuario
-    participant Lya
-    participant Sub as Sub-agente
-    participant SP as SharePoint
-
-    Usuario->>Lya: Consulta sobre un servicio
-    Lya->>Sub: Redirige según servicio
-    Sub->>SP: Consulta fuente oficial
-    SP-->>Sub: Información validada
-    Sub-->>Usuario: Respuesta clara y formal
 ```
 
 ---
 
 ## ✍️ Guía de prompts
 
-* **Rol del sistema**: Mantener estilo institucional, cálido y formal.
-* **Rol del usuario**: Consulta sobre servicios DSLA.
-* **Restricciones**:
+Cada agente tiene su propia guía en `/agents/<nombre>/prompts/`.
+Se recomienda incluir:
 
-  * Solo mostrar servicios listados en imagen institucional DSLA.
-  * Para detalles adicionales, consultar SharePoint oficial.
-
-**Plantilla ejemplo:**
-
-```md
-Eres Lya, un agente institucional (AI-DSLA-01).
-Objetivo: brindar información sobre servicios DSLA y derivar a sub-agentes.
-Formato de salida: primero lista de temas a tratar, luego respuesta formal.
-Fuentes: Imagen institucional DSLA y SharePoint oficial.
-```
+* Rol del sistema (objetivo, tono, restricciones).
+* Rol del usuario (input esperado).
+* Ejemplos de I/O (criterios de aceptación).
 
 ---
 
 ## 🚀 Despliegue en Copilot Studio
 
-1. Importa el flujo JSON de `/agents/lya/flows/` en Copilot Studio.
-2. Configura los sub-agentes para cada servicio DSLA.
-3. Conecta el agente a SharePoint como fuente de conocimiento.
-4. Prueba en *Test Canvas*.
-5. Publica en canal (Teams/Web).
+1. Importa los flujos JSON desde `/agents/<nombre>/flows/`.
+2. Configura conectores necesarios (ej. SharePoint, Dataverse, OneDrive).
+3. Prueba en *Test Canvas*.
+4. Publica y comparte en canal (Teams, Web).
 
 ---
 
 ## ✅ Pruebas y calidad
 
-* **Validación de fuentes**: Solo responde con información DSLA oficial.
-* **Pruebas de contrato**: Verifican estructura de respuesta (lista + texto formal).
-* **Snapshots**: Para asegurar consistencia en estilo y tono.
+* **Pruebas de contrato**: garantizan consistencia en el formato de salida.
+* **Snapshots de respuestas**: detectan cambios no deseados.
+* **Linting y link-check**: integrados en GitHub Actions.
 
 ---
 
 ## 🗺️ Roadmap
 
-* [ ] Añadir más sub-agentes de servicios.
-* [ ] Integrar métricas de uso y satisfacción.
-* [ ] Documentar casos de uso frecuentes.
-* [ ] Mejorar personalización con metadatos del usuario.
+* [ ] Añadir más agentes institucionales y técnicos.
+* [ ] Publicar *cookbooks* de prompts reutilizables.
+* [ ] Incluir métricas de calidad de agentes.
+* [ ] Crear scripts de validación automática.
 
 ---
 
 ## 🤝 Contribuir
 
-1. Haz un *fork* y crea rama: `feature/mi-mejora`
-2. Asegúrate que las pruebas pasan
-3. Abre un *Pull Request* con descripción y ejemplos
-
----
-
-## ❓ FAQ
-
-**¿Qué servicios cubre Lya?**
-Los servicios oficiales listados en la imagen institucional DSLA.
-
-**¿De dónde obtiene la información?**
-Del SharePoint oficial DSLA y materiales institucionales.
+1. Haz un *fork* y crea una rama: `feature/mi-mejora`
+2. Asegúrate de que las pruebas pasan
+3. Abre un *Pull Request* con descripción clara y ejemplos
 
 ---
 
@@ -166,4 +149,4 @@ Este proyecto está bajo la licencia **MIT**. Consulta `LICENSE`.
 
 ### Créditos
 
-Hecho con ❤️ por
+Hecho con ❤️ por Raymond y colaboradores de la comunidad.
