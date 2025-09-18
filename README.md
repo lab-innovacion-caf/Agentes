@@ -6,7 +6,7 @@
 ![Issues](https://img.shields.io/github/issues/OWNER/REPO)
 ![Stars](https://img.shields.io/github/stars/OWNER/REPO)
 
-> **Lya** (AI-DSLA-01) es un **agente institucional desarrollado en Copilot Studio** para la DSLA. Su función principal es responder consultas sobre los servicios logísticos y administrativos, y derivar la atención a **sub-agentes especializados por servicio**.
+> **Lya** es un **agente institucional desarrollado en Copilot Studio** para la DSLA. Su función principal es responder consultas sobre los servicios logísticos y administrativos, y derivar la atención a **sub-agentes especializados por servicio**.
 
 ---
 
@@ -48,7 +48,7 @@
 
 * Lya está registrada como **AI-DSLA-01** en el archivo institucional de agentes.
 * Se desarrolló como parte de las iniciativas de **agentes institucionales en Copilot Studio**.
-* Fue creado de manera colaborativa, con participación de **Raymond (autor principal)**, **Braulio Salazar (gerente)** y el equipo DSLA.
+* Fue creado de manera colaborativa, con participación de **Raymond Arteaga**, **Braulio Salazar** y el equipo DSLA.
 * El proyecto evolucionó a través de correos, notas técnicas y archivos compartidos, con iteraciones frecuentes.
 
 ---
