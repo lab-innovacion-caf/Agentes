@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./media/banner.webp" alt="Banner Laboratorio de Innovación"/>
+</p>
+
 # 🤖 Lya: Agente de asistencia de DSLA
 
 ![License](https://img.shields.io/badge/license-MIT-informational)
