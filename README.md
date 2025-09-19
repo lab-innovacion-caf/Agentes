@@ -2,7 +2,7 @@
   <img src="./media/banner.webp" alt="Banner Laboratorio de Innovación"/>
 </p>
 
-# 🤖 Lya: Agente de asistencia de DSLA
+# 🤖 Gloria: Agente de Resúmenes Ejecutivos
 
 ![License](https://img.shields.io/badge/license-MIT-informational)
 ![Contributions](https://img.shields.io/badge/contributions-welcome-success)
@@ -10,19 +10,19 @@
 ![Issues](https://img.shields.io/github/issues/OWNER/REPO)
 ![Stars](https://img.shields.io/github/stars/OWNER/REPO)
 
-> **Lya** es un **agente institucional desarrollado en Copilot Studio** para la DSLA. Su función principal es responder consultas sobre los servicios logísticos y administrativos, y derivar la atención a **sub-agentes especializados por servicio**.
+> **Gloria** es un **agente institucional desarrollado en Copilot Studio** para apoyar la generación, validación y estructuración de **resúmenes ejecutivos** en operaciones de cooperación técnica, comités y proyectos regionales.
 
 ---
 
 ## 📹 Demo rápida (Prueba del Agente)
 
-* **Demo en vivo**: [URL\_DEMO]()
-https://teams.microsoft.com/l/app/f6405520-7907-4464-8f6e-9889e2fb7d8f?templateInstanceId=a5d131aa-4313-4a37-9f17-f550dbe42b3a&environment=Default-863e38af-aa47-45c7-a525-20465c654244
+* **Demo en vivo**: [URL_DEMO](https://teams.microsoft.com/l/app/f6405520-7907-4464-8f6e-9889e2fb7d8f?templateInstanceId=7e1845a7-b8e1-46e4-9cac-7e653f91ef5b&environment=Default-863e38af-aa47-45c7-a525-20465c654244)
+
 ---
 
 ## 🧭 Tabla de contenidos
 
-* [¿Qué hace Lya?](#-qué-hace-lya)
+* [¿Qué hace Gloria?](#-qué-hace-gloria)
 * [Historia y desarrollo](#-historia-y-desarrollo)
 * [Arquitectura y funcionamiento](#-arquitectura-y-funcionamiento)
 * [Guía de prompts](#-guía-de-prompts)
@@ -35,33 +35,31 @@ https://teams.microsoft.com/l/app/f6405520-7907-4464-8f6e-9889e2fb7d8f?templateI
 
 ---
 
-## 🧩 ¿Qué hace Lya?
+## 🧩 ¿Qué hace Gloria?
 
-* Muestra información de los servicios que ofrece la **DSLA**.
-* Crea un **sub-agente por cada servicio**, permitiendo modularizar la atención.
-* Funciona como un asistente institucional formal, cálido y profesional.
-* Personaliza respuestas incluyendo el **nombre del usuario**.
-* Presenta antes de cada respuesta un **resumen en lista de temas**.
-* Responde únicamente con los servicios oficiales de la DSLA.
-* Consulta información exclusiva del **SharePoint institucional** para dar más detalles.
+* Extrae y organiza información clave de **documentos técnicos y operativos**.  
+* Genera **resúmenes ejecutivos estandarizados** con campos como país, cliente, monto, plazo, modalidad, objetivos y situación actual.  
+* Facilita la revisión por parte de **comités y gerencias**.  
+* Se alimenta de documentos institucionales como *PE 1631-2025*, *8. RESUMEN EJECUTIVO OIM_vf* y *PE-1170-2024*.  
+* Puede integrarse con **SharePoint** para flujos de validación y almacenamiento.  
 
 ---
 
 ## 🛠️ Historia y desarrollo
 
-* Lya está registrada como **AI-DSLA-01** en el archivo institucional de agentes.
-* Se desarrolló como parte de las iniciativas de **agentes institucionales en Copilot Studio**.
-* Fue creado de manera colaborativa, con participación de **Raymond Arteaga**, **Braulio Salazar** y el equipo DSLA.
-* El proyecto evolucionó a través de correos, notas técnicas y archivos compartidos, con iteraciones frecuentes.
+* Surge como parte del proyecto de **automatización de resúmenes ejecutivos**.  
+* Se apoya en documentos redactados por **Gloria Betancourt**, quien ha generado múltiples resúmenes para operaciones regionales en temas de migración, género y licitaciones.  
+* Su diseño y funcionalidades fueron discutidas en reuniones como *Proyecto Agente Copilot - Revisión Resumen Ejecutivo*.  
+* Está vinculado a iniciativas de cooperación técnica y validación documental.  
 
 ---
 
 ## 🧠 ¿Qué lo hace especial?
 
-* Estilo formal, cálido y profesional.
-* Respuestas personalizadas con el nombre del usuario.
-* Uso de fuentes oficiales (imagen institucional de la DSLA y SharePoint).
-* Modularización en sub-agentes para cada servicio, lo que facilita la escalabilidad.
+* **Estandariza** la presentación de operaciones para facilitar su aprobación.  
+* Permite generar resúmenes desde **documentos PDF** cargados por el usuario.  
+* Puede adaptarse a diferentes sectores: **género, migración, licitaciones, cooperación técnica**.  
+* Utiliza **plantillas institucionales** y puede integrarse con flujos de **validación automática** en SharePoint.  
 
 ---
 
@@ -69,104 +67,96 @@ https://teams.microsoft.com/l/app/f6405520-7907-4464-8f6e-9889e2fb7d8f?templateI
 
 ### Vista general
 
-```mermaid
 flowchart LR
-    U[Usuario] --> P[Pregunta]
-    P --> L[Lya]
-    L -->|Derivación| S[Sub-agente de servicio]
-    S --> R[Respuesta especializada]
+    U[Usuario] --> D[Documento PDF]
+    D --> G[Gloria]
+    G --> F[Formulario estructurado]
+    F --> R[Resumen Ejecutivo]
     R --> U
-```
 
-### Secuencia
-
-```mermaid
+Secuencia
 sequenceDiagram
     participant Usuario
-    participant Lya
-    participant Sub as Sub-agente
+    participant Gloria
     participant SP as SharePoint
 
-    Usuario->>Lya: Consulta sobre un servicio
-    Lya->>Sub: Redirige según servicio
-    Sub->>SP: Consulta fuente oficial
-    SP-->>Sub: Información validada
-    Sub-->>Usuario: Respuesta clara y formal
-```
+    Usuario->>Gloria: Carga documento técnico
+    Gloria->>SP: Consulta plantilla y campos requeridos
+    SP-->>Gloria: Estructura oficial
+    Gloria->>Usuario: Devuelve plantilla y datos extraídos
+    Gloria-->>Usuario: Genera Resumen Ejecutivo final
 
----
 
-## ✍️ Guía de prompts
+    Usuario->>Gloria: Carga documento técnico
+    Gloria->>SP: Consulta plantilla y campos requeridos
+    SP-->>Gloria: Estructura oficial
+    Gloria->>Usuario: Devuelve plantilla y datos extraídos
+    Gloria-->>Usuario: Genera Resumen Ejecutivo final
+✍️ Guía de prompts
+Rol del sistema: Agente institucional para generación de resúmenes ejecutivos.
 
-* **Rol del sistema**: Mantener estilo institucional, cálido y formal.
-* **Rol del usuario**: Consulta sobre servicios DSLA.
-* **Restricciones**:
+Rol del usuario: Carga documentos técnicos o solicita resumen ejecutivo.
 
-  * Solo mostrar servicios listados en imagen institucional DSLA.
-  * Para detalles adicionales, consultar SharePoint oficial.
+Restricciones:
 
-**Plantilla ejemplo de los prompts utilizados para su creación:**
+Solo responder con los campos oficiales de la plantilla institucional.
 
-```md
-Eres Lya, un agente institucional (AI-DSLA-01).
-Objetivo: brindar información sobre servicios DSLA y derivar a sub-agentes.
-Formato de salida: primero lista de temas a tratar, luego respuesta formal.
-Fuentes: Imagen institucional DSLA y SharePoint oficial.
-```
+Para detalles adicionales, consultar SharePoint.
 
----
+Plantilla ejemplo de prompt utilizado:
 
-## 🚀 Despliegue en Copilot Studio (M365 + Teams + SharePoint)
+md
+Copiar código
+Eres Gloria, un agente institucional para resúmenes ejecutivos.
+Objetivo: generar resúmenes claros y estructurados de operaciones CAF.
+Formato: campos estandarizados + descripción técnica.
+Fuentes: documentos institucionales y SharePoint.
+🚀 Despliegue en Copilot Studio (M365 + Teams + SharePoint)
+Crea o selecciona tu agente en Copilot Studio.
 
-1. Crea o selecciona tu agente en **Copilot Studio**.  
-2. Agrega SharePoint como fuente de conocimiento.  
-3. Configura los canales de publicación (Teams, M365, SharePoint, web).  
-4. Prueba en *Test Canvas*, Teams y SharePoint.  
-5. Publica para tu organización o canal.  
+Configura flujo de carga de documentos.
 
----
+Integra con SharePoint para plantillas y validación.
 
-## ✅ Pruebas y calidad
+Prueba en Test Canvas, Teams y SharePoint.
 
-* **Validación de fuentes**: Solo responde con información DSLA oficial.
-* **Pruebas de contrato**: Verifican estructura de respuesta (lista + texto formal).
-* **Snapshots**: Para asegurar consistencia en estilo y tono.
+Publica en canal institucional.
 
----
+✅ Pruebas y calidad
+Validación de campos obligatorios: país, cliente, monto, modalidad, objetivos.
 
-## 🗺️ Roadmap
+Pruebas con documentos reales: PE 1631-2025 y 8. RESUMEN EJECUTIVO OIM_vf.
 
-* [ ] Añadir más sub-agentes de servicios.
-* [ ] Integrar métricas de uso y satisfacción.
-* [ ] Documentar casos de uso frecuentes.
-* [ ] Mejorar personalización con metadatos del usuario.
+Revisión manual por el equipo de Gloria Betancourt para confirmar la fidelidad de la información.
 
----
+🗺️ Roadmap
+ Integrar con flujos de aprobación de comités.
 
-## 🤝 Contribuir
+ Añadir validación automática de campos.
 
-1. Haz un *fork* y crea rama: `feature/mi-mejora`
-2. Asegúrate que las pruebas pasan
-3. Abre un *Pull Request* con descripción y ejemplos
+ Generar salidas en Word y PDF.
 
----
+ Medir tiempo de generación y precisión.
 
-## ❓ FAQ
+🤝 Contribuir
+Haz un fork y crea rama: feature/mi-mejora
 
-**¿Qué servicios cubre Lya?**
-Los servicios oficiales listados en la imagen institucional DSLA.
+Asegúrate que las pruebas pasan
 
-**¿De dónde obtiene la información?**
-Del SharePoint oficial DSLA y materiales institucionales.
+Abre un Pull Request con descripción y ejemplos
 
----
+❓ FAQ
+¿Qué tipo de documentos procesa Gloria?
+Documentos técnicos, operativos y de cooperación técnica.
 
-## 📄 Licencia
+¿Puede generar resúmenes automáticamente?
+Sí, a partir de documentos PDF estructurados.
 
-Este proyecto está bajo la licencia **MIT**. Consulta `LICENSE`.
+¿Dónde se guarda la información?
+En SharePoint institucional y en Copilot Studio.
 
----
+📄 Licencia
+Este proyecto está bajo la licencia MIT. Consulta LICENSE.
 
-### Créditos
-
-Hecho con ❤️ por
+Créditos
+Hecho con ❤️ por Raymond Arteaga, con apoyo de Alberto Leañez, Gloria Betancourt y el equipo institucional.
