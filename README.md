@@ -14,11 +14,10 @@
 
 ---
 
-## 📹 Demo rápida
+## 📹 Demo rápida (Prueba del Agente)
 
-* **Video/GIF**: `./media/demo.gif`
-* **Demo en vivo**: [URL\_DEMO](https://example.com)
-
+* **Demo en vivo**: [URL\_DEMO]()
+https://teams.microsoft.com/l/app/f6405520-7907-4464-8f6e-9889e2fb7d8f?templateInstanceId=a5d131aa-4313-4a37-9f17-f550dbe42b3a&environment=Default-863e38af-aa47-45c7-a525-20465c654244
 ---
 
 ## 🧭 Tabla de contenidos
@@ -106,7 +105,7 @@ sequenceDiagram
   * Solo mostrar servicios listados en imagen institucional DSLA.
   * Para detalles adicionales, consultar SharePoint oficial.
 
-**Plantilla ejemplo:**
+**Plantilla ejemplo de los prompts utilizados para su creación:**
 
 ```md
 Eres Lya, un agente institucional (AI-DSLA-01).
@@ -117,13 +116,13 @@ Fuentes: Imagen institucional DSLA y SharePoint oficial.
 
 ---
 
-## 🚀 Despliegue en Copilot Studio
+## 🚀 Despliegue en Copilot Studio (M365 + Teams + SharePoint)
 
-1. Importa el flujo JSON de `/agents/lya/flows/` en Copilot Studio.
-2. Configura los sub-agentes para cada servicio DSLA.
-3. Conecta el agente a SharePoint como fuente de conocimiento.
-4. Prueba en *Test Canvas*.
-5. Publica en canal (Teams/Web).
+1. Crea o selecciona tu agente en **Copilot Studio**.  
+2. Agrega SharePoint como fuente de conocimiento.  
+3. Configura los canales de publicación (Teams, M365, SharePoint, web).  
+4. Prueba en *Test Canvas*, Teams y SharePoint.  
+5. Publica para tu organización o canal.  
 
 ---
 
