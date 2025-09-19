@@ -169,4 +169,5 @@ Este proyecto está bajo la licencia **MIT**. Consulta `LICENSE`.
 
 ### Créditos
 
-Hecho con ❤️ por
+Hecho con ❤️ por Raymond Arteaga
+
