@@ -2,7 +2,7 @@
   <img src="./media/banner.webp" alt="Banner Laboratorio de Innovación"/>
 </p>
 
-# 🤖 Gloria: Agente de Resúmenes Ejecutivos
+# 🤖 Agente de Normativas CAF
 
 ![License](https://img.shields.io/badge/license-MIT-informational)
 ![Contributions](https://img.shields.io/badge/contributions-welcome-success)
@@ -10,23 +10,22 @@
 ![Issues](https://img.shields.io/github/issues/OWNER/REPO)
 ![Stars](https://img.shields.io/github/stars/OWNER/REPO)
 
-> **Gloria** es un **agente institucional desarrollado en Copilot Studio** para apoyar la generación, validación y estructuración de **resúmenes ejecutivos** en operaciones de cooperación técnica, comités y proyectos regionales.
+> El **Agente de Normativas CAF** es una solución desarrollada en **Copilot Studio** para facilitar la interacción con el sistema normativo institucional de CAF, validando, comparando y monitoreando documentos oficiales.
 
 ---
 
 ## 📹 Demo rápida (Prueba del Agente)
 
-* **Demo en vivo**: (https://teams.microsoft.com/l/app/f6405520-7907-4464-8f6e-9889e2fb7d8f?templateInstanceId=7e1845a7-b8e1-46e4-9cac-7e653f91ef5b&environment=Default-863e38af-aa47-45c7-a525-20465c654244)
+* **Demo en vivo**: ()https://teams.microsoft.com/l/app/f6405520-7907-4464-8f6e-9889e2fb7d8f?templateInstanceId=b92e89ba-e531-448c-b9a6-79f55c31e3cb&environment=Default-863e38af-aa47-45c7-a525-20465c654244
 
 ---
 
 ## 🧭 Tabla de contenidos
 
-* [¿Qué hace Gloria?](#-qué-hace-gloria)
+* [¿Qué hace el Agente de Normativas CAF?](#-qué-hace-el-agente-de-normativas-caf)
 * [Historia y desarrollo](#-historia-y-desarrollo)
 * [Arquitectura y funcionamiento](#-arquitectura-y-funcionamiento)
 * [Guía de prompts](#-guía-de-prompts)
-* [Despliegue en Copilot Studio](#-despliegue-en-copilot-studio)
 * [Pruebas y calidad](#-pruebas-y-calidad)
 * [Roadmap](#-roadmap)
 * [Contribuir](#-contribuir)
@@ -35,31 +34,31 @@
 
 ---
 
-## 🧩 ¿Qué hace Gloria?
+## 🧩 ¿Qué hace el Agente de Normativas CAF?
 
-* Extrae y organiza información clave de **documentos técnicos y operativos**.  
-* Genera **resúmenes ejecutivos estandarizados** con campos como país, cliente, monto, plazo, modalidad, objetivos y situación actual.  
-* Facilita la revisión por parte de **comités y gerencias**.  
-* Se alimenta de documentos institucionales como *PE 1631-2025*, *8. RESUMEN EJECUTIVO OIM_vf* y *PE-1170-2024*.  
-* Puede integrarse con **SharePoint** para flujos de validación y almacenamiento.  
+* **Valida documentos normativos** alojados en SharePoint.  
+* **Compara versiones** para detectar cambios no autorizados.  
+* Realiza **búsquedas inteligentes** (palabras clave, fechas, autores).  
+* Genera **alertas automáticas** ante modificaciones en archivos normativos.  
+* Verifica **autenticidad e integridad** de documentos.  
+* Recibe **archivos externos** (PDF, Word, texto) y los compara con los contenidos oficiales.  
 
 ---
 
 ## 🛠️ Historia y desarrollo
 
-* Surge como parte del proyecto de **automatización de resúmenes ejecutivos** 
-* Se apoya en documentos redactados por **Gloria Betancourt**, quien ha generado múltiples resúmenes para operaciones regionales en temas de migración, género y licitaciones.  
-* Su diseño y funcionalidades fueron discutidas en reuniones como *Proyecto Agente Copilot - Revisión Resumen Ejecutivo*.  
-* Está vinculado a iniciativas de cooperación técnica y validación documental.  
+* Propuesto como parte de la iniciativa de **empaquetamiento de agentes institucionales**, liderada por **Jean Rosa (consultor externo)** y **Braulio Salazar**.  
+* Documentado en *Paso a paso Prompts*, donde se definieron comportamiento, objetivos y fuentes.  
+* Especificado en documentos técnicos como *CAF_Plantilla_Especificacion_Funcional_UC_AgenteCopilot_20250716* y *CAF_Plantilla_Especificacion_Funcional_UC_AgenteCopilot_20250808*.  
 
 ---
 
 ## 🧠 ¿Qué lo hace especial?
 
-* **Estandariza** la presentación de operaciones para facilitar su aprobación.  
-* Permite generar resúmenes desde **documentos PDF** cargados por el usuario.  
-* Puede adaptarse a diferentes sectores: **género, migración, licitaciones, cooperación técnica**.  
-* Utiliza **plantillas institucionales** y puede integrarse con flujos de **validación automática** en SharePoint.  
+* **Alta trazabilidad**: detecta cualquier modificación no autorizada.  
+* **Cumplimiento normativo**: alineado con los lineamientos del sistema normativo (LN-001).  
+* **Seguridad robusta**: control de acceso, validación de usuarios, cifrado y auditoría.  
+* **Escalabilidad**: puede replicarse en otras áreas que gestionen documentos regulados.  
 
 ---
 
@@ -69,15 +68,14 @@
 
 ```mermaid
 flowchart LR
-    U[Usuario] --> G[Gloria]
-    G --> O[Oferta: crear resumen ejecutivo]
-    O --> U2[Usuario acepta]
-    U2 --> D[Usuario carga PDF]
-    D --> G
-    G --> A[Análisis con prompt]
-    A --> W[Generación de Word]
-    W --> E[Envío por correo electrónico]
-    E --> U
+    U[Usuario] --> A[Agente de Normativas CAF]
+    A --> S[SharePoint Normativas]
+    A --> V[Validación de documentos]
+    A --> C[Comparación de versiones]
+    A --> B[Búsqueda inteligente]
+    A --> L[Alertas automáticas]
+    S --> R[Resultados: Validación, Comparación, Alerta]
+    R --> U
 ```
 
 ### Secuencia
@@ -85,67 +83,54 @@ flowchart LR
 ```mermaid
 sequenceDiagram
     participant Usuario
-    participant Gloria
-    participant PDF as Documento PDF
-    participant Word as Archivo Word
-    participant Email as Correo Electrónico
+    participant Agente as Agente de Normativas
+    participant SP as SharePoint Normativas
+    participant Alerta as Sistema de Alertas
 
-    Usuario->>Gloria: Inicia conversación
-    Gloria->>Usuario: Ofrece crear resumen ejecutivo
-    Usuario->>Gloria: Acepta hacer el resumen
-    Usuario->>Gloria: Carga Documento PDF
-    Gloria->>PDF: Analiza contenido con prompt
-    Gloria->>Word: Genera resumen estructurado
-    Word-->>Gloria: Documento final listo
-    Gloria->>Email: Envía resumen ejecutivo al usuario
-    Email-->>Usuario: Recibe el Word con el resumen
+    Usuario->>Agente: Sube documento o solicita búsqueda
+    Agente->>SP: Verifica documento oficial
+    SP-->>Agente: Devuelve información normativa
+    Agente->>Usuario: Valida autenticidad / compara versiones
+    Agente->>Alerta: Genera notificación de cambios
+    Alerta-->>Usuario: Recibe alerta en Outlook/Teams/WhatsApp
 ```
 
 ---
 
 ## ✍️ Guía de prompts
 
-* **Rol del sistema**: Agente institucional para generación de resúmenes ejecutivos.  
-* **Rol del usuario**: Carga documentos técnicos o solicita resumen ejecutivo.  
+* **Rol del sistema**: Agente institucional para validación y control normativo.  
+* **Rol del usuario**: Consulta documentos normativos o sube archivos externos.  
 * **Restricciones**:  
-  * Solo responder con los campos oficiales de la plantilla institucional.  
-  * Para detalles adicionales, consultar SharePoint.  
+  * Solo responder con documentos oficiales de SharePoint.  
+  * Validar usuario autorizado antes de enviar alertas.  
 
 **Plantilla ejemplo de prompt utilizado:**
 
 ```md
-Eres Gloria, un agente institucional para resúmenes ejecutivos.
-Objetivo: generar resúmenes claros y estructurados de operaciones CAF.
-Formato: campos estandarizados + descripción técnica.
-Fuentes: documentos institucionales y SharePoint.
+Eres el Agente de Normativas CAF.
+Objetivo: validar, comparar y monitorear documentos normativos.
+Formato: devolver resultados claros y auditables (validación, diferencias, alertas).
+Fuentes: SharePoint Normativas y documentos institucionales.
 ```
-
----
-
-## 🚀 Despliegue en Copilot Studio (M365 + Teams + SharePoint)
-
-1. Crea o selecciona tu agente en **Copilot Studio**.  
-2. Configura flujo de carga de documentos.  
-3. Integra con **SharePoint** para plantillas y validación.  
-4. Prueba en *Test Canvas*, Teams y SharePoint.  
-5. Publica en canal institucional.  
 
 ---
 
 ## ✅ Pruebas y calidad
 
-* **Validación de campos obligatorios**: país, cliente, monto, modalidad, objetivos.  
-* **Pruebas con documentos reales**: *PE 1631-2025* y *8. RESUMEN EJECUTIVO OIM_vf*.  
-* **Revisión manual** por el equipo de **Gloria Betancourt** para confirmar la fidelidad de la información.  
+* **Pruebas de validación** con documentos LN-001, MN-038, MN-058, MN-064, MN-049.  
+* **Revisión de seguridad**: control de acceso y cifrado de datos.  
+* **Casos de prueba**: detección de cambios en versiones históricas, envío de alertas por correo y Teams.  
+* **Validación manual** por **Jean Rosa** y equipo normativo.  
 
 ---
 
 ## 🗺️ Roadmap
 
-* [ ] Integrar con flujos de aprobación de comités.  
-* [ ] Añadir validación automática de campos.  
-* [ ] Generar salidas en Word y PDF.  
-* [ ] Medir tiempo de generación y precisión.  
+* [ ] Integración con buzón de correo para alertas normativas.  
+* [ ] Expansión hacia áreas de compras y contrataciones.  
+* [ ] Dashboard de seguimiento de cambios normativos.  
+* [ ] Capacitación a usuarios clave en el uso del agente.  
 
 ---
 
@@ -159,14 +144,14 @@ Fuentes: documentos institucionales y SharePoint.
 
 ## ❓ FAQ
 
-**¿Qué tipo de documentos procesa Gloria?**  
-Documentos técnicos, operativos y de cooperación técnica.  
+**¿Qué documentos procesa el agente?**  
+Archivos normativos de SharePoint y documentos externos (Word, PDF, TXT).  
 
-**¿Puede generar resúmenes automáticamente?**  
-Sí, a partir de documentos PDF estructurados.  
+**¿Cómo detecta cambios no autorizados?**  
+Comparando versiones y metadatos con los oficiales en SharePoint.  
 
 **¿Dónde se guarda la información?**  
-En **SharePoint institucional** y en **Copilot Studio**.  
+En **SharePoint Normativas** y sistemas de auditoría de CAF.  
 
 ---
 
@@ -178,4 +163,4 @@ Este proyecto está bajo la licencia **MIT**. Consulta `LICENSE`.
 
 ### Créditos
 
-Hecho con ❤️ por Christopher Acosta y Raymond Arteaga.
+Hecho con ❤️ por Jean Rosa y Braulio Salazar el equipo de Normativas CAF.
