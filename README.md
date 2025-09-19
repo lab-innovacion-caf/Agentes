@@ -16,7 +16,7 @@
 
 ## 📹 Demo rápida (Prueba del Agente)
 
-* **Demo en vivo**: [URL_DEMO](https://teams.microsoft.com/l/app/f6405520-7907-4464-8f6e-9889e2fb7d8f?templateInstanceId=7e1845a7-b8e1-46e4-9cac-7e653f91ef5b&environment=Default-863e38af-aa47-45c7-a525-20465c654244)
+* **Demo en vivo**: (https://teams.microsoft.com/l/app/f6405520-7907-4464-8f6e-9889e2fb7d8f?templateInstanceId=7e1845a7-b8e1-46e4-9cac-7e653f91ef5b&environment=Default-863e38af-aa47-45c7-a525-20465c654244)
 
 ---
 
@@ -47,7 +47,7 @@
 
 ## 🛠️ Historia y desarrollo
 
-* Surge como parte del proyecto de **automatización de resúmenes ejecutivos**.  
+* Surge como parte del proyecto de **automatización de resúmenes ejecutivos** 
 * Se apoya en documentos redactados por **Gloria Betancourt**, quien ha generado múltiples resúmenes para operaciones regionales en temas de migración, género y licitaciones.  
 * Su diseño y funcionalidades fueron discutidas en reuniones como *Proyecto Agente Copilot - Revisión Resumen Ejecutivo*.  
 * Está vinculado a iniciativas de cooperación técnica y validación documental.  
@@ -67,96 +67,115 @@
 
 ### Vista general
 
+```mermaid
 flowchart LR
-    U[Usuario] --> D[Documento PDF]
-    D --> G[Gloria]
-    G --> F[Formulario estructurado]
-    F --> R[Resumen Ejecutivo]
-    R --> U
+    U[Usuario] --> G[Gloria]
+    G --> O[Oferta: crear resumen ejecutivo]
+    O --> U2[Usuario acepta]
+    U2 --> D[Usuario carga PDF]
+    D --> G
+    G --> A[Análisis con prompt]
+    A --> W[Generación de Word]
+    W --> E[Envío por correo electrónico]
+    E --> U
+```
 
-Secuencia
+### Secuencia
+
+```mermaid
 sequenceDiagram
     participant Usuario
     participant Gloria
-    participant SP as SharePoint
+    participant PDF as Documento PDF
+    participant Word as Archivo Word
+    participant Email as Correo Electrónico
 
-    Usuario->>Gloria: Carga documento técnico
-    Gloria->>SP: Consulta plantilla y campos requeridos
-    SP-->>Gloria: Estructura oficial
-    Gloria->>Usuario: Devuelve plantilla y datos extraídos
-    Gloria-->>Usuario: Genera Resumen Ejecutivo final
+    Usuario->>Gloria: Inicia conversación
+    Gloria->>Usuario: Ofrece crear resumen ejecutivo
+    Usuario->>Gloria: Acepta hacer el resumen
+    Usuario->>Gloria: Carga Documento PDF
+    Gloria->>PDF: Analiza contenido con prompt
+    Gloria->>Word: Genera resumen estructurado
+    Word-->>Gloria: Documento final listo
+    Gloria->>Email: Envía resumen ejecutivo al usuario
+    Email-->>Usuario: Recibe el Word con el resumen
+```
 
+---
 
-    Usuario->>Gloria: Carga documento técnico
-    Gloria->>SP: Consulta plantilla y campos requeridos
-    SP-->>Gloria: Estructura oficial
-    Gloria->>Usuario: Devuelve plantilla y datos extraídos
-    Gloria-->>Usuario: Genera Resumen Ejecutivo final
-✍️ Guía de prompts
-Rol del sistema: Agente institucional para generación de resúmenes ejecutivos.
+## ✍️ Guía de prompts
 
-Rol del usuario: Carga documentos técnicos o solicita resumen ejecutivo.
+* **Rol del sistema**: Agente institucional para generación de resúmenes ejecutivos.  
+* **Rol del usuario**: Carga documentos técnicos o solicita resumen ejecutivo.  
+* **Restricciones**:  
+  * Solo responder con los campos oficiales de la plantilla institucional.  
+  * Para detalles adicionales, consultar SharePoint.  
 
-Restricciones:
+**Plantilla ejemplo de prompt utilizado:**
 
-Solo responder con los campos oficiales de la plantilla institucional.
-
-Para detalles adicionales, consultar SharePoint.
-
-Plantilla ejemplo de prompt utilizado:
-
-md
-Copiar código
+```md
 Eres Gloria, un agente institucional para resúmenes ejecutivos.
 Objetivo: generar resúmenes claros y estructurados de operaciones CAF.
 Formato: campos estandarizados + descripción técnica.
 Fuentes: documentos institucionales y SharePoint.
-🚀 Despliegue en Copilot Studio (M365 + Teams + SharePoint)
-Crea o selecciona tu agente en Copilot Studio.
+```
 
-Configura flujo de carga de documentos.
+---
 
-Integra con SharePoint para plantillas y validación.
+## 🚀 Despliegue en Copilot Studio (M365 + Teams + SharePoint)
 
-Prueba en Test Canvas, Teams y SharePoint.
+1. Crea o selecciona tu agente en **Copilot Studio**.  
+2. Configura flujo de carga de documentos.  
+3. Integra con **SharePoint** para plantillas y validación.  
+4. Prueba en *Test Canvas*, Teams y SharePoint.  
+5. Publica en canal institucional.  
 
-Publica en canal institucional.
+---
 
-✅ Pruebas y calidad
-Validación de campos obligatorios: país, cliente, monto, modalidad, objetivos.
+## ✅ Pruebas y calidad
 
-Pruebas con documentos reales: PE 1631-2025 y 8. RESUMEN EJECUTIVO OIM_vf.
+* **Validación de campos obligatorios**: país, cliente, monto, modalidad, objetivos.  
+* **Pruebas con documentos reales**: *PE 1631-2025* y *8. RESUMEN EJECUTIVO OIM_vf*.  
+* **Revisión manual** por el equipo de **Gloria Betancourt** para confirmar la fidelidad de la información.  
 
-Revisión manual por el equipo de Gloria Betancourt para confirmar la fidelidad de la información.
+---
 
-🗺️ Roadmap
- Integrar con flujos de aprobación de comités.
+## 🗺️ Roadmap
 
- Añadir validación automática de campos.
+* [ ] Integrar con flujos de aprobación de comités.  
+* [ ] Añadir validación automática de campos.  
+* [ ] Generar salidas en Word y PDF.  
+* [ ] Medir tiempo de generación y precisión.  
 
- Generar salidas en Word y PDF.
+---
 
- Medir tiempo de generación y precisión.
+## 🤝 Contribuir
 
-🤝 Contribuir
-Haz un fork y crea rama: feature/mi-mejora
+1. Haz un *fork* y crea rama: `feature/mi-mejora`  
+2. Asegúrate que las pruebas pasan  
+3. Abre un *Pull Request* con descripción y ejemplos  
 
-Asegúrate que las pruebas pasan
+---
 
-Abre un Pull Request con descripción y ejemplos
+## ❓ FAQ
 
-❓ FAQ
-¿Qué tipo de documentos procesa Gloria?
-Documentos técnicos, operativos y de cooperación técnica.
+**¿Qué tipo de documentos procesa Gloria?**  
+Documentos técnicos, operativos y de cooperación técnica.  
 
-¿Puede generar resúmenes automáticamente?
-Sí, a partir de documentos PDF estructurados.
+**¿Puede generar resúmenes automáticamente?**  
+Sí, a partir de documentos PDF estructurados.  
 
-¿Dónde se guarda la información?
-En SharePoint institucional y en Copilot Studio.
+**¿Dónde se guarda la información?**  
+En **SharePoint institucional** y en **Copilot Studio**.  
 
-📄 Licencia
-Este proyecto está bajo la licencia MIT. Consulta LICENSE.
+---
 
-Créditos
-Hecho con ❤️ por Raymond Arteaga, con apoyo de Alberto Leañez, Gloria Betancourt y el equipo institucional.
+## 📄 Licencia
+
+Este proyecto está bajo la licencia **MIT**. Consulta `LICENSE`.  
+
+---
+
+### Créditos
+
+Hecho con ❤️ por Christopher Acosta y Raymond Arteaga.
