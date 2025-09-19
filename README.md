@@ -2,7 +2,7 @@
   <img src="./media/banner.webp" alt="Banner Laboratorio de Innovación"/>
 </p>
 
-# 🤖 Gloria: Agente de Resúmenes Ejecutivos
+# 🤖 Agente de Transcripción para la Secretaría General
 
 ![License](https://img.shields.io/badge/license-MIT-informational)
 ![Contributions](https://img.shields.io/badge/contributions-welcome-success)
@@ -10,23 +10,22 @@
 ![Issues](https://img.shields.io/github/issues/OWNER/REPO)
 ![Stars](https://img.shields.io/github/stars/OWNER/REPO)
 
-> **Gloria** es un **agente institucional desarrollado en Copilot Studio** para apoyar la generación, validación y estructuración de **resúmenes ejecutivos** en operaciones de cooperación técnica, comités y proyectos regionales.
+> El **Agente de Transcripción** fue diseñado para **automatizar la generación de actas** a partir de transcripciones de reuniones, optimizando el trabajo de la **Secretaría General** y facilitando el llenado de **plantillas de cooperación técnica**.
 
 ---
 
 ## 📹 Demo rápida (Prueba del Agente)
 
-* **Demo en vivo**: (https://teams.microsoft.com/l/app/f6405520-7907-4464-8f6e-9889e2fb7d8f?templateInstanceId=7e1845a7-b8e1-46e4-9cac-7e653f91ef5b&environment=Default-863e38af-aa47-45c7-a525-20465c654244)
+* **Demo en vivo**: (https://teams.microsoft.com/l/app/f6405520-7907-4464-8f6e-9889e2fb7d8f?templateInstanceId=a69288bb-8e4f-48f4-bb7e-be488cd961f9&environment=Default-863e38af-aa47-45c7-a525-20465c654244)
 
 ---
 
 ## 🧭 Tabla de contenidos
 
-* [¿Qué hace Gloria?](#-qué-hace-gloria)
+* [¿Qué hace el Agente?](#-qué-hace-el-agente)
 * [Historia y desarrollo](#-historia-y-desarrollo)
 * [Arquitectura y funcionamiento](#-arquitectura-y-funcionamiento)
 * [Guía de prompts](#-guía-de-prompts)
-* [Despliegue en Copilot Studio](#-despliegue-en-copilot-studio)
 * [Pruebas y calidad](#-pruebas-y-calidad)
 * [Roadmap](#-roadmap)
 * [Contribuir](#-contribuir)
@@ -35,31 +34,34 @@
 
 ---
 
-## 🧩 ¿Qué hace Gloria?
+## 🧩 ¿Qué hace el Agente?
 
-* Extrae y organiza información clave de **documentos técnicos y operativos**.  
-* Genera **resúmenes ejecutivos estandarizados** con campos como país, cliente, monto, plazo, modalidad, objetivos y situación actual.  
-* Facilita la revisión por parte de **comités y gerencias**.  
-* Se alimenta de documentos institucionales como *PE 1631-2025*, *8. RESUMEN EJECUTIVO OIM_vf* y *PE-1170-2024*.  
-* Puede integrarse con **SharePoint** para flujos de validación y almacenamiento.  
+* Transcribe reuniones desde **archivos PDF o directamente desde Teams**.  
+* Genera **actas automáticas en formato Word**, listas para revisión.  
+* Permite ajustar el nivel de detalle: **resumido o extenso**.  
+* Llena plantillas de cooperación técnica a partir de documentos institucionales las Actas del las reuniones de la Secretaría General.
+* Envía resultados por correo, incluso a cuentas externas como **Gmail**.  
 
 ---
 
 ## 🛠️ Historia y desarrollo
 
-* Surge como parte del proyecto de **automatización de resúmenes ejecutivos** 
-* Se apoya en documentos redactados por **Gloria Betancourt**, quien ha generado múltiples resúmenes para operaciones regionales en temas de migración, género y licitaciones.  
-* Su diseño y funcionalidades fueron discutidas en reuniones como *Proyecto Agente Copilot - Revisión Resumen Ejecutivo*.  
-* Está vinculado a iniciativas de cooperación técnica y validación documental.  
+* Iniciado por **Raymond Arteaga (pasante)** en colaboración con **Héctor Cucumides**.  
+* Discutido y validado en reuniones como *Agente de Transcripción* y *Agente de Transcripción 3*.  
+* Se realizaron pruebas con **transcripciones reales** y se ajustó el flujo para cumplir con los estándares de la Secretaría General.  
+* Se propuso una versión doble del agente:  
+  * **Acta resumida**.  
+  * **Acta detallada**.  
+* Supervisado y validado también por **Braulio Salazar**.  
 
 ---
 
 ## 🧠 ¿Qué lo hace especial?
 
-* **Estandariza** la presentación de operaciones para facilitar su aprobación.  
-* Permite generar resúmenes desde **documentos PDF** cargados por el usuario.  
-* Puede adaptarse a diferentes sectores: **género, migración, licitaciones, cooperación técnica**.  
-* Utiliza **plantillas institucionales** y puede integrarse con flujos de **validación automática** en SharePoint.  
+* **Automatiza** tareas que antes requerían horas de trabajo manual.  
+* Se adapta a las **políticas de seguridad organizacional** (uso de Webex, Teams, OneDrive).  
+* Permite **comparar transcripciones entre plataformas** (Webex vs Teams).  
+* Facilita el trabajo de áreas como la **Secretaría General** y **Cooperación Técnica**.  
 
 ---
 
@@ -69,15 +71,12 @@
 
 ```mermaid
 flowchart LR
-    U[Usuario] --> G[Gloria]
-    G --> O[Oferta: crear resumen ejecutivo]
-    O --> U2[Usuario acepta]
-    U2 --> D[Usuario carga PDF]
-    D --> G
-    G --> A[Análisis con prompt]
-    A --> W[Generación de Word]
-    W --> E[Envío por correo electrónico]
-    E --> U
+    U[Usuario] --> A[Agente de Transcripción]
+    U2[PDF o audio] --> A
+    A --> P[Procesa y resume]
+    P --> W[Acta en Word]
+    W --> C[Correo de entrega]
+    C --> U
 ```
 
 ### Secuencia
@@ -85,67 +84,55 @@ flowchart LR
 ```mermaid
 sequenceDiagram
     participant Usuario
-    participant Gloria
-    participant PDF as Documento PDF
-    participant Word as Archivo Word
-    participant Email as Correo Electrónico
+    participant Agente as Agente de Transcripción
+    participant PDF as Documento PDF/Audio
+    participant Word as Acta en Word
+    participant Email as Correo
 
-    Usuario->>Gloria: Inicia conversación
-    Gloria->>Usuario: Ofrece crear resumen ejecutivo
-    Usuario->>Gloria: Acepta hacer el resumen
-    Usuario->>Gloria: Carga Documento PDF
-    Gloria->>PDF: Analiza contenido con prompt
-    Gloria->>Word: Genera resumen estructurado
-    Word-->>Gloria: Documento final listo
-    Gloria->>Email: Envía resumen ejecutivo al usuario
-    Email-->>Usuario: Recibe el Word con el resumen
+    Usuario->>Agente: Carga PDF o audio
+    Agente->>PDF: Procesa transcripción
+    Agente->>Word: Genera acta (resumida o extensa)
+    Word-->>Agente: Documento Word listo
+    Agente->>Email: Envía acta al usuario
+    Email-->>Usuario: Recibe acta por correo
 ```
 
 ---
 
 ## ✍️ Guía de prompts
 
-* **Rol del sistema**: Agente institucional para generación de resúmenes ejecutivos.  
-* **Rol del usuario**: Carga documentos técnicos o solicita resumen ejecutivo.  
+* **Rol del sistema**: Agente institucional para transcripción y generación de actas.  
+* **Rol del usuario**: Carga documentos o solicita acta.  
 * **Restricciones**:  
-  * Solo responder con los campos oficiales de la plantilla institucional.  
-  * Para detalles adicionales, consultar SharePoint.  
+  * Máximo **50 páginas** por documento.  
+  * Solo formatos **PDF o TXT**.  
+  * Validación de campos como fechas y participantes.  
 
 **Plantilla ejemplo de prompt utilizado:**
 
 ```md
-Eres Gloria, un agente institucional para resúmenes ejecutivos.
-Objetivo: generar resúmenes claros y estructurados de operaciones CAF.
-Formato: campos estandarizados + descripción técnica.
-Fuentes: documentos institucionales y SharePoint.
+Eres el agente de transcripción para la Secretaría General.
+Objetivo: generar actas automáticas y llenar plantillas de CT.
+Formato: Word institucional, ajustable en nivel de detalle.
+Fuentes: PDF de transcripción, plantilla institucional.
 ```
-
----
-
-## 🚀 Despliegue en Copilot Studio (M365 + Teams + SharePoint)
-
-1. Crea o selecciona tu agente en **Copilot Studio**.  
-2. Configura flujo de carga de documentos.  
-3. Integra con **SharePoint** para plantillas y validación.  
-4. Prueba en *Test Canvas*, Teams y SharePoint.  
-5. Publica en canal institucional.  
 
 ---
 
 ## ✅ Pruebas y calidad
 
-* **Validación de campos obligatorios**: país, cliente, monto, modalidad, objetivos.  
-* **Pruebas con documentos reales**: *PE 1631-2025* y *8. RESUMEN EJECUTIVO OIM_vf*.  
-* **Revisión manual** por el equipo de **Gloria Betancourt** para confirmar la fidelidad de la información.  
+* **Pruebas realizadas** con documentos reales y audios de reuniones.  
+* **Validación de resultados** por Héctor Cucumides y Braulio Salazar.  
+* **Ajustes técnicos** para mejorar el envío por correo y compatibilidad con OneDrive.  
 
 ---
 
 ## 🗺️ Roadmap
 
-* [ ] Integrar con flujos de aprobación de comités.  
-* [ ] Añadir validación automática de campos.  
-* [ ] Generar salidas en Word y PDF.  
-* [ ] Medir tiempo de generación y precisión.  
+* [ ] Integrar transcripción directa desde **Teams Premium**.  
+* [ ] Añadir opción de **traducción automática**.  
+* [ ] Mejorar compatibilidad con **Webex**.  
+* [ ] Crear **dashboard de seguimiento** de actas generadas.  
 
 ---
 
@@ -159,14 +146,14 @@ Fuentes: documentos institucionales y SharePoint.
 
 ## ❓ FAQ
 
-**¿Qué tipo de documentos procesa Gloria?**  
-Documentos técnicos, operativos y de cooperación técnica.  
+**¿Qué tipo de documentos procesa el agente?**  
+PDFs con transcripciones de reuniones, archivos TXT y plantillas de CT.  
 
-**¿Puede generar resúmenes automáticamente?**  
-Sí, a partir de documentos PDF estructurados.  
+**¿Puede generar actas automáticamente?**  
+Sí, en formato Word, con opción de envío por correo.  
 
 **¿Dónde se guarda la información?**  
-En **SharePoint institucional** y en **Copilot Studio**.  
+En **OneDrive institucional** y en **Copilot Studio**.  
 
 ---
 
@@ -178,4 +165,4 @@ Este proyecto está bajo la licencia **MIT**. Consulta `LICENSE`.
 
 ### Créditos
 
-Hecho con ❤️ por Christopher Acosta y Raymond Arteaga.
+Hecho con ❤️ por Raymond Arteaga, en colaboración con Héctor Cucumides y Braulio Salazar.
