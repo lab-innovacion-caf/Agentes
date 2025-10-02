@@ -1,6 +1,7 @@
 <p align="center">
   <img src="./media/d00f3a1f-c7e0-4a5b-943b-3bc872e4740e.webp" alt="Banner Laboratorio de Innovación"/>
-  <img src="./media/ImagenMain.png" alt="Banner Laboratorio de Innovación"/>
+  <img src="./media/GITHUB-4.png" alt="Banner Laboratorio de Innovación"/>
+  <img src="./media/GITHUB-5.png" alt="Banner Laboratorio de Innovación"/>
 </p>
 
 
