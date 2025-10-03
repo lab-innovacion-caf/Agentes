@@ -16,7 +16,7 @@
 
 ## 📹 Demo rápida (Prueba del Agente)
 
-* **Demo en vivo**: ()https://teams.microsoft.com/l/app/f6405520-7907-4464-8f6e-9889e2fb7d8f?templateInstanceId=b92e89ba-e531-448c-b9a6-79f55c31e3cb&environment=Default-863e38af-aa47-45c7-a525-20465c654244
+* **Demo en vivo**: https://teams.microsoft.com/l/app/f6405520-7907-4464-8f6e-9889e2fb7d8f?templateInstanceId=b92e89ba-e531-448c-b9a6-79f55c31e3cb&environment=Default-863e38af-aa47-45c7-a525-20465c654244
 
 ---
 
