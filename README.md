@@ -7,8 +7,8 @@
 ![License](https://img.shields.io/badge/license-MIT-informational)
 ![Contributions](https://img.shields.io/badge/contributions-welcome-success)
 ![Built with](https://img.shields.io/badge/built%20with-Microsoft%20Copilot%20Studio-0078D4)
-![Issues](https://img.shields.io/github/issues/OWNER/REPO)
-![Stars](https://img.shields.io/github/stars/OWNER/REPO)
+![Issues](https://img.shields.io/github/issues/lab-innovacion-caf/Agentes)
+![Stars](https://img.shields.io/github/stars/lab-innovacion-caf/Agentes)
 
 > **Lya** es un **agente institucional desarrollado en Copilot Studio** para la DSLA. Su función principal es responder consultas sobre los servicios logísticos y administrativos, y derivar la atención a **sub-agentes especializados por servicio**.
 
