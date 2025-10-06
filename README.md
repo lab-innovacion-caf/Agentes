@@ -7,35 +7,40 @@
 ![License](https://img.shields.io/badge/license-MIT-informational)
 ![Contributions](https://img.shields.io/badge/contributions-welcome-success)
 ![Built with](https://img.shields.io/badge/built%20with-Microsoft%20Copilot%20Studio-0078D4)
-![Issues](https://img.shields.io/github/issues/OWNER/REPO)
-![Stars](https://img.shields.io/github/stars/OWNER/REPO)
+![Issues](https://img.shields.io/github/issues/lab-innovacion-caf/Agentes)
+![Stars](https://img.shields.io/github/stars/lab-innovacion-caf/Agentes)
 
 > **Gloria** es un **agente institucional desarrollado en Copilot Studio** para apoyar la generación, validación y estructuración de **resúmenes ejecutivos** en operaciones de cooperación técnica, comités y proyectos regionales.
 
 ---
 
+👉 **Si quieres descargar un agente y editarlo en tu propio Copilot Studio**, por favor escribe a [innovacion@caf.com](mailto:innovacion@caf.com).  
+El equipo de Innovación te compartirá los archivos y la configuración necesarios.
+
+---
+
 ## 📹 Demo rápida (Prueba del Agente)
 
-* **Demo en vivo**: (https://teams.microsoft.com/l/app/f6405520-7907-4464-8f6e-9889e2fb7d8f?templateInstanceId=7e1845a7-b8e1-46e4-9cac-7e653f91ef5b&environment=Default-863e38af-aa47-45c7-a525-20465c654244)
+* **Agente**:  
+https://teams.microsoft.com/l/app/f6405520-7907-4464-8f6e-9889e2fb7d8f?templateInstanceId=7e1845a7-b8e1-46e4-9cac-7e653f91ef5b&environment=Default-863e38af-aa47-45c7-a525-20465c654244
 
 ---
 
 ## 🧭 Tabla de contenidos
 
-* [¿Qué hace Gloria?](#-qué-hace-gloria)
-* [Historia y desarrollo](#-historia-y-desarrollo)
-* [Arquitectura y funcionamiento](#-arquitectura-y-funcionamiento)
-* [Guía de prompts](#-guía-de-prompts)
-* [Despliegue en Copilot Studio](#-despliegue-en-copilot-studio)
-* [Pruebas y calidad](#-pruebas-y-calidad)
-* [Roadmap](#-roadmap)
-* [Contribuir](#-contribuir)
-* [FAQ](#-faq)
-* [Licencia](#-licencia)
+- [¿Qué hace Gloria?](#que-hace-gloria)
+- [Historia y desarrollo](#historia-y-desarrollo)
+- [Arquitectura y funcionamiento](#arquitectura-y-funcionamiento)
+- [Guía de prompts](#guia-de-prompts)
+- [Despliegue en Copilot Studio](#despliegue-en-copilot-studio-m365--teams--sharepoint)
+- [Pruebas y calidad](#pruebas-y-calidad)
+- [FAQ](#faq)
+- [Licencia](#licencia)
 
 ---
 
 ## 🧩 ¿Qué hace Gloria?
+<a id="que-hace-gloria"></a>
 
 * Extrae y organiza información clave de **documentos técnicos y operativos**.  
 * Genera **resúmenes ejecutivos estandarizados** con campos como país, cliente, monto, plazo, modalidad, objetivos y situación actual.  
@@ -46,10 +51,11 @@
 ---
 
 ## 🛠️ Historia y desarrollo
+<a id="historia-y-desarrollo"></a>
 
-* Surge como parte del proyecto de **automatización de resúmenes ejecutivos** 
+* Surge como parte del proyecto de **automatización de resúmenes ejecutivos**.  
 * Se apoya en documentos redactados por **Gloria Betancourt**, quien ha generado múltiples resúmenes para operaciones regionales en temas de migración, género y licitaciones.  
-* Su diseño y funcionalidades fueron discutidas en reuniones como *Proyecto Agente Copilot - Revisión Resumen Ejecutivo*.  
+* Su diseño y funcionalidades fueron discutidas en reuniones pautadas con Alberto Leañez.
 * Está vinculado a iniciativas de cooperación técnica y validación documental.  
 
 ---
@@ -64,6 +70,7 @@
 ---
 
 ## 🛠️ Arquitectura y funcionamiento
+<a id="arquitectura-y-funcionamiento"></a>
 
 ### Vista general
 
@@ -104,6 +111,7 @@ sequenceDiagram
 ---
 
 ## ✍️ Guía de prompts
+<a id="guia-de-prompts"></a>
 
 * **Rol del sistema**: Agente institucional para generación de resúmenes ejecutivos.  
 * **Rol del usuario**: Carga documentos técnicos o solicita resumen ejecutivo.  
@@ -123,6 +131,7 @@ Fuentes: documentos institucionales y SharePoint.
 ---
 
 ## 🚀 Despliegue en Copilot Studio (M365 + Teams + SharePoint)
+<a id="despliegue-en-copilot-studio-m365--teams--sharepoint"></a>
 
 1. Crea o selecciona tu agente en **Copilot Studio**.  
 2. Configura flujo de carga de documentos.  
@@ -133,6 +142,7 @@ Fuentes: documentos institucionales y SharePoint.
 ---
 
 ## ✅ Pruebas y calidad
+<a id="pruebas-y-calidad"></a>
 
 * **Validación de campos obligatorios**: país, cliente, monto, modalidad, objetivos.  
 * **Pruebas con documentos reales**: *PE 1631-2025* y *8. RESUMEN EJECUTIVO OIM_vf*.  
@@ -140,24 +150,8 @@ Fuentes: documentos institucionales y SharePoint.
 
 ---
 
-## 🗺️ Roadmap
-
-* [ ] Integrar con flujos de aprobación de comités.  
-* [ ] Añadir validación automática de campos.  
-* [ ] Generar salidas en Word y PDF.  
-* [ ] Medir tiempo de generación y precisión.  
-
----
-
-## 🤝 Contribuir
-
-1. Haz un *fork* y crea rama: `feature/mi-mejora`  
-2. Asegúrate que las pruebas pasan  
-3. Abre un *Pull Request* con descripción y ejemplos  
-
----
-
 ## ❓ FAQ
+<a id="faq"></a>
 
 **¿Qué tipo de documentos procesa Gloria?**  
 Documentos técnicos, operativos y de cooperación técnica.  
@@ -171,6 +165,7 @@ En **SharePoint institucional** y en **Copilot Studio**.
 ---
 
 ## 📄 Licencia
+<a id="licencia"></a>
 
 Este proyecto está bajo la licencia **MIT**. Consulta `LICENSE`.  
 
