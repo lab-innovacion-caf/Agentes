@@ -14,27 +14,32 @@
 
 ---
 
+👉 **Si quieres descargar un agente y editarlo en tu propio Copilot Studio**, por favor escribe a [innovacion@caf.com](mailto:innovacion@caf.com).  
+El equipo de Innovación te compartirá los archivos y la configuración necesarios.
+
+---
+
 ## 📹 Demo rápida (Prueba del Agente)
 
-* **Demo en vivo**: https://teams.microsoft.com/l/app/f6405520-7907-4464-8f6e-9889e2fb7d8f?templateInstanceId=b92e89ba-e531-448c-b9a6-79f55c31e3cb&environment=Default-863e38af-aa47-45c7-a525-20465c654244
+* **Agente**:  
+https://teams.microsoft.com/l/app/f6405520-7907-4464-8f6e-9889e2fb7d8f?templateInstanceId=b92e89ba-e531-448c-b9a6-79f55c31e3cb&environment=Default-863e38af-aa47-45c7-a525-20465c654244
 
 ---
 
 ## 🧭 Tabla de contenidos
 
-* [¿Qué hace el Agente de Normativas CAF?](#-qué-hace-el-agente-de-normativas-caf)
-* [Historia y desarrollo](#-historia-y-desarrollo)
-* [Arquitectura y funcionamiento](#-arquitectura-y-funcionamiento)
-* [Guía de prompts](#-guía-de-prompts)
-* [Pruebas y calidad](#-pruebas-y-calidad)
-* [Roadmap](#-roadmap)
-* [Contribuir](#-contribuir)
-* [FAQ](#-faq)
-* [Licencia](#-licencia)
+- [¿Qué hace el Agente de Normativas CAF?](#que-hace-el-agente-de-normativas-caf)
+- [Historia y desarrollo](#historia-y-desarrollo)
+- [Arquitectura y funcionamiento](#arquitectura-y-funcionamiento)
+- [Guía de prompts](#guia-de-prompts)
+- [Pruebas y calidad](#pruebas-y-calidad)
+- [FAQ](#faq)
+- [Licencia](#licencia)
 
 ---
 
 ## 🧩 ¿Qué hace el Agente de Normativas CAF?
+<a id="que-hace-el-agente-de-normativas-caf"></a>
 
 * **Valida documentos normativos** alojados en SharePoint.  
 * **Compara versiones** para detectar cambios no autorizados.  
@@ -46,6 +51,7 @@
 ---
 
 ## 🛠️ Historia y desarrollo
+<a id="historia-y-desarrollo"></a>
 
 * Propuesto como parte de la iniciativa de **empaquetamiento de agentes institucionales**, liderada por **Jean Rosa (consultor externo)** y **Braulio Salazar**.  
 * Documentado en *Paso a paso Prompts*, donde se definieron comportamiento, objetivos y fuentes.  
@@ -63,6 +69,7 @@
 ---
 
 ## 🛠️ Arquitectura y funcionamiento
+<a id="arquitectura-y-funcionamiento"></a>
 
 ### Vista general
 
@@ -98,6 +105,7 @@ sequenceDiagram
 ---
 
 ## ✍️ Guía de prompts
+<a id="guia-de-prompts"></a>
 
 * **Rol del sistema**: Agente institucional para validación y control normativo.  
 * **Rol del usuario**: Consulta documentos normativos o sube archivos externos.  
@@ -117,6 +125,7 @@ Fuentes: SharePoint Normativas y documentos institucionales.
 ---
 
 ## ✅ Pruebas y calidad
+<a id="pruebas-y-calidad"></a>
 
 * **Pruebas de validación** con documentos LN-001, MN-038, MN-058, MN-064, MN-049.  
 * **Revisión de seguridad**: control de acceso y cifrado de datos.  
@@ -125,24 +134,11 @@ Fuentes: SharePoint Normativas y documentos institucionales.
 
 ---
 
-## 🗺️ Roadmap
-
-* [ ] Integración con buzón de correo para alertas normativas.  
-* [ ] Expansión hacia áreas de compras y contrataciones.  
-* [ ] Dashboard de seguimiento de cambios normativos.  
-* [ ] Capacitación a usuarios clave en el uso del agente.  
-
----
-
-## 🤝 Contribuir
-
-1. Haz un *fork* y crea rama: `feature/mi-mejora`  
-2. Asegúrate que las pruebas pasan  
-3. Abre un *Pull Request* con descripción y ejemplos  
 
 ---
 
 ## ❓ FAQ
+<a id="faq"></a>
 
 **¿Qué documentos procesa el agente?**  
 Archivos normativos de SharePoint y documentos externos (Word, PDF, TXT).  
@@ -156,6 +152,7 @@ En **SharePoint Normativas** y sistemas de auditoría de CAF.
 ---
 
 ## 📄 Licencia
+<a id="licencia"></a>
 
 Este proyecto está bajo la licencia **MIT**. Consulta `LICENSE`.  
 
@@ -163,4 +160,4 @@ Este proyecto está bajo la licencia **MIT**. Consulta `LICENSE`.
 
 ### Créditos
 
-Hecho con ❤️ por Jean Rosa y Braulio Salazar el equipo de Normativas CAF.
+Hecho con ❤️ por Jean Rosa y Braulio Salazar, equipo de Normativas CAF.
