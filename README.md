@@ -14,28 +14,33 @@
 
 ---
 
+👉 **Si quieres descargar un agente y editarlo en tu propio Copilot Studio**, por favor escribe a [innovacion@caf.com](mailto:innovacion@caf.com).  
+El equipo de Innovación te compartirá los archivos y la configuración necesarios.
+
+---
+
 ## 📹 Demo rápida (Prueba del Agente)
 
-* **Demo en vivo**: [URL\_DEMO]()
+* **Agente**:  
 https://teams.microsoft.com/l/app/f6405520-7907-4464-8f6e-9889e2fb7d8f?templateInstanceId=a5d131aa-4313-4a37-9f17-f550dbe42b3a&environment=Default-863e38af-aa47-45c7-a525-20465c654244
+
 ---
 
 ## 🧭 Tabla de contenidos
 
-* [¿Qué hace Lya?](#-qué-hace-lya)
-* [Historia y desarrollo](#-historia-y-desarrollo)
-* [Arquitectura y funcionamiento](#-arquitectura-y-funcionamiento)
-* [Guía de prompts](#-guía-de-prompts)
-* [Despliegue en Copilot Studio](#-despliegue-en-copilot-studio)
-* [Pruebas y calidad](#-pruebas-y-calidad)
-* [Roadmap](#-roadmap)
-* [Contribuir](#-contribuir)
-* [FAQ](#-faq)
-* [Licencia](#-licencia)
+- [¿Qué hace Lya?](#que-hace-lya)
+- [Historia y desarrollo](#historia-y-desarrollo)
+- [Arquitectura y funcionamiento](#arquitectura-y-funcionamiento)
+- [Guía de prompts](#guia-de-prompts)
+- [Despliegue en Copilot Studio](#despliegue-en-copilot-studio-m365--teams--sharepoint)
+- [Pruebas y calidad](#pruebas-y-calidad)
+- [FAQ](#faq)
+- [Licencia](#licencia)
 
 ---
 
 ## 🧩 ¿Qué hace Lya?
+<a id="que-hace-lya"></a>
 
 * Muestra información de los servicios que ofrece la **DSLA**.
 * Crea un **sub-agente por cada servicio**, permitiendo modularizar la atención.
@@ -48,6 +53,7 @@ https://teams.microsoft.com/l/app/f6405520-7907-4464-8f6e-9889e2fb7d8f?templateI
 ---
 
 ## 🛠️ Historia y desarrollo
+<a id="historia-y-desarrollo"></a>
 
 * Lya está registrada como **AI-DSLA-01** en el archivo institucional de agentes.
 * Se desarrolló como parte de las iniciativas de **agentes institucionales en Copilot Studio**.
@@ -66,6 +72,7 @@ https://teams.microsoft.com/l/app/f6405520-7907-4464-8f6e-9889e2fb7d8f?templateI
 ---
 
 ## 🛠️ Arquitectura y funcionamiento
+<a id="arquitectura-y-funcionamiento"></a>
 
 ### Vista general
 
@@ -97,11 +104,11 @@ sequenceDiagram
 ---
 
 ## ✍️ Guía de prompts
+<a id="guia-de-prompts"></a>
 
 * **Rol del sistema**: Mantener estilo institucional, cálido y formal.
 * **Rol del usuario**: Consulta sobre servicios DSLA.
 * **Restricciones**:
-
   * Solo mostrar servicios listados en imagen institucional DSLA.
   * Para detalles adicionales, consultar SharePoint oficial.
 
@@ -117,6 +124,7 @@ Fuentes: Imagen institucional DSLA y SharePoint oficial.
 ---
 
 ## 🚀 Despliegue en Copilot Studio (M365 + Teams + SharePoint)
+<a id="despliegue-en-copilot-studio-m365--teams--sharepoint"></a>
 
 1. Crea o selecciona tu agente en **Copilot Studio**.  
 2. Agrega SharePoint como fuente de conocimiento.  
@@ -127,6 +135,7 @@ Fuentes: Imagen institucional DSLA y SharePoint oficial.
 ---
 
 ## ✅ Pruebas y calidad
+<a id="pruebas-y-calidad"></a>
 
 * **Validación de fuentes**: Solo responde con información DSLA oficial.
 * **Pruebas de contrato**: Verifican estructura de respuesta (lista + texto formal).
@@ -134,34 +143,19 @@ Fuentes: Imagen institucional DSLA y SharePoint oficial.
 
 ---
 
-## 🗺️ Roadmap
-
-* [ ] Añadir más sub-agentes de servicios.
-* [ ] Integrar métricas de uso y satisfacción.
-* [ ] Documentar casos de uso frecuentes.
-* [ ] Mejorar personalización con metadatos del usuario.
-
----
-
-## 🤝 Contribuir
-
-1. Haz un *fork* y crea rama: `feature/mi-mejora`
-2. Asegúrate que las pruebas pasan
-3. Abre un *Pull Request* con descripción y ejemplos
-
----
-
 ## ❓ FAQ
+<a id="faq"></a>
 
-**¿Qué servicios cubre Lya?**
+**¿Qué servicios cubre Lya?**  
 Los servicios oficiales listados en la imagen institucional DSLA.
 
-**¿De dónde obtiene la información?**
+**¿De dónde obtiene la información?**  
 Del SharePoint oficial DSLA y materiales institucionales.
 
 ---
 
 ## 📄 Licencia
+<a id="licencia"></a>
 
 Este proyecto está bajo la licencia **MIT**. Consulta `LICENSE`.
 
@@ -170,4 +164,3 @@ Este proyecto está bajo la licencia **MIT**. Consulta `LICENSE`.
 ### Créditos
 
 Hecho con ❤️ por Raymond Arteaga
-
