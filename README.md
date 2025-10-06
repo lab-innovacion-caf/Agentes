@@ -21,10 +21,12 @@ El equipo de Innovación te compartirá los archivos y la configuración necesar
 
 ## 📹 Demo rápida (Prueba del Agente)
 
-* **Agente**:  
-https://teams.microsoft.com/l/app/f6405520-7907-4464-8f6e-9889e2fb7d8f?templateInstanceId=7e1845a7-b8e1-46e4-9cac-7e653f91ef5b&environment=Default-863e38af-aa47-45c7-a525-20465c654244
+<p><a href="https://teams.microsoft.com/l/app/f6405520-7907-4464-8f6e-9889e2fb7d8f?templateInstanceId=7e1845a7-b8e1-46e4-9cac-7e653f91ef5b&environment=Default-863e38af-aa47-45c7-a525-20465c654244" target="_blank" rel="noopener noreferrer">
+👉 Abrir demo en una nueva pestaña
+</a></p>
 
 ---
+
 
 ## 🧭 Tabla de contenidos
 
