@@ -2,7 +2,7 @@
   <img src="./media/banner.webp" alt="Banner Laboratorio de Innovación"/>
 </p>
 
-# 🤖 Odin+: Agente Helpjuice para la DSSD
+# 🤖 Odin+: Agente Helpjuice
 
 ![License](https://img.shields.io/badge/license-MIT-informational)
 ![Contributions](https://img.shields.io/badge/contributions-welcome-success)
