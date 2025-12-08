@@ -2,7 +2,7 @@
   <img src="./media/banner.webp" alt="Banner Laboratorio de Innovación"/>
 </p>
 
-# 🤖 Karen: Agente de Gestión de Facturas de Viajes
+# 🤖 LoopWise: Agente para Automatización Legal en Consultoría Jurídica (CJ)
 
 ![License](https://img.shields.io/badge/license-MIT-informational)
 ![Contributions](https://img.shields.io/badge/contributions-welcome-success)
@@ -10,7 +10,8 @@
 ![Issues](https://img.shields.io/github/issues/lab-innovacion-caf/Agentes)
 ![Stars](https://img.shields.io/github/stars/lab-innovacion-caf/Agentes)
 
-> **Karen** es un **agente institucional desarrollado en Copilot Studio** para automatizar la **gestión de facturas de viajes**, optimizando la carga, validación y consolidación de datos contables en los procesos internos de CAF.
+> **LoopWise** es un **agente institucional desarrollado en Copilot Studio** para la Dirección de Consultoría Jurídica (CJ).  
+Su propósito es **automatizar la generación de documentos legales**, estandarizar comunicaciones y reducir tiempos en la preparación de engagement letters, RFPs y retainer agreements.
 
 ---
 
@@ -21,7 +22,8 @@ El equipo de Innovación te compartirá los archivos y la configuración necesar
 
 ## 🧭 Tabla de contenidos
 
-- [¿Qué hace Karen?](#que-hace-karen)
+- [¿Qué hace LoopWise?](#que-hace-loopwise)
+- [Contexto y necesidad](#contexto-y-necesidad)
 - [Historia y desarrollo](#historia-y-desarrollo)
 - [Arquitectura y funcionamiento](#arquitectura-y-funcionamiento)
 - [Guía de prompts](#guia-de-prompts)
@@ -31,57 +33,86 @@ El equipo de Innovación te compartirá los archivos y la configuración necesar
 
 ---
 
-## 🧩 ¿Qué hace Karen?
-<a id="que-hace-karen"></a>
+## 🧩 ¿Qué hace LoopWise?
+<a id="que-hace-loopwise"></a>
 
-### 🔍 Extracción automática de datos desde facturas PDF
-Karen forma parte de un flujo automatizado que identifica y estructura campos claves como:
+### 🔍 Extracción automática de datos legales
+LoopWise identifica y estructura información clave de propuestas y documentos jurídicos:
 
-- Número de factura  
-- Fecha de emisión  
-- Nombre del pasajero  
-- Nombre y RUC del emisor  
-- Descripción del servicio  
-- Total a pagar y moneda  
-- Número de CMB  
-- Fecha del viaje  
-- Medio de pago  
-- Observaciones  
+- Partes involucradas  
+- Alcance del servicio  
+- Honorarios  
+- Plazos y condiciones  
 
-La extracción se realiza de forma **automática** cada vez que se agrega, modifica o actualiza un archivo en la carpeta de SharePoint definida para el proceso.
+### 📝 Generación automática de documentos legales
+El agente completa plantillas corporativas y genera:
 
-### 📂 Carga masiva en SharePoint  
-El usuario puede cargar **varias facturas simultáneamente** en la carpeta de SharePoint configurada.  
-Cada vez que se agrega o modifica un archivo, el flujo se **activa automáticamente**, sin intervención manual adicional.
+- **Engagement letters**  
+- **RFPs**  
+- **Retainer agreements**
 
-### 📊 Actualización automática en Excel institucional  
-El flujo procesa los datos extraídos y los refleja en el **Excel institucional contable** en **menos de 5 minutos**, manteniendo la información consolidada y actualizada.
+Los documentos quedan listos para revisión del abogado responsable.
 
-### 🧠 Entrenamiento adaptable  
-El flujo puede reconocer **nuevos formatos de facturas** sin necesidad de rehacer todo el diseño, permitiendo ajustarse a variantes de proveedores, agencias o aerolíneas.
+### ✉️ Generación de correos corporativos
+LoopWise produce borradores de correos estandarizados para:
+
+- Solicitud o envío de engagement letters  
+- Peticiones formales de RFPs  
+- Comunicaciones legales internas o externas  
+
+### 🛡️ Consistencia jurídica
+Mantiene lenguaje corporativo unificado y reduce retrabajo en la preparación de documentos legales.
+
+---
+
+## 🧠 Contexto y necesidad
+<a id="contexto-y-necesidad"></a>
+
+**Situación previa:**  
+Los abogados debían revisar manualmente documentos extensos para extraer pocos datos críticos y luego transcribirlos en plantillas estándar.  
+Esto generaba:
+
+- Consumo excesivo de tiempo  
+- Errores por transcripción  
+- Variaciones entre abogados  
+
+**Necesidad:**  
+Automatizar la extracción de información y la generación de documentos legales, garantizando consistencia y reducción de errores.
+
+Documentos base: *LoopWise 1.pdf*, *LoopWise 3.pdf*.
 
 ---
 
 ## 🛠️ Historia y desarrollo
 <a id="historia-y-desarrollo"></a>
 
-* Karen surge como respuesta a la necesidad del área contable de **agilizar la gestión de facturas de viajes** y reducir errores de transcripción manual.  
-* El agente y su flujo asociado fueron desarrollados en colaboración con **Karen Castañeda**, quien validó el comportamiento del sistema y las mejoras en tiempos de cierre.  
-* Durante las iteraciones se realizaron ajustes clave:  
-  - Reducción de notificaciones por correo para evitar saturación.  
-  - Acceso directo a la carpeta de SharePoint indicada por el usuario para **carga masiva eficiente**.  
-  - Activación automática del flujo cuando se **agrega, modifica o actualiza** un archivo en dicha carpeta.  
-* El resultado fue una mejora notable en la **eficiencia del proceso** y en la **experiencia del usuario** contable.
+**Responsable técnico:** Christopher Acosta  
+**AI Owner:** Sofía Isaza  
+**Dirección:** Consultoría Jurídica (CJ)  
+
+**Documentación funcional:**  
+- LoopWise 1.pdf  
+- LoopWise 3.pdf  
+
+### Reuniones clave
+- *LoopWise – Agente IA CJ* — 5 septiembre 2025  
+- *LoopWise* — 23 septiembre 2025  
+- *LoopWise – Revisión final* — 3 y 24 diciembre 2025  
+
+Sofía Isaza compartió en correos y Teams:  
+- Diagramas de flujo  
+- Plantillas de documentos  
+- Lineamientos de estandarización  
 
 ---
 
 ## 🧠 ¿Qué lo hace especial?
 
-* Automatiza completamente un proceso contable crítico, desde la carga hasta el registro.  
-* Reduce drásticamente errores de transcripción manual.  
-* Se integra de forma natural con herramientas **M365** (Teams, SharePoint, Excel y Power Automate).  
-* Se activa automáticamente ante cambios en la carpeta de trabajo, reduciendo fricción operativa.  
-* Es escalable a otros tipos de facturas o procesos contables similares.
+* Automatiza procesos legales repetitivos  
+* Reduce tiempos en preparación de contratos  
+* Estandariza lenguaje jurídico  
+* Produce documentos y correos listos para revisión  
+* Escalable a nuevos procesos legales  
 
 ---
 
@@ -92,12 +123,13 @@ El flujo puede reconocer **nuevos formatos de facturas** sin necesidad de rehace
 
 ```mermaid
 flowchart LR
-    U[Usuario] --> SP[Carpeta SharePoint<br>Facturas de viajes]
-    SP -->|Nuevo/actualizado/modificado archivo| PA[Power Automate<br>Flujo automático]
-    PA --> X[Extracción y validación de datos]
-    X --> E[Excel institucional<br>Hoja contable]
-    E --> K[Karen<br>Resumen y apoyo al usuario]
-    K --> U2[Usuario recibe confirmación<br>e instrucciones]
+    U[Usuario] --> L[LoopWise]
+    L --> SP[SharePoint<br>Carga y validación de documentos]
+    L --> T[Plantillas corporativas<br>RFPs / Engagement Letters]
+    L --> C[Generación de correos<br>Lenguaje legal estandarizado]
+    SP --> PA[Power Automate<br>Flujos de extracción y validación]
+    PA --> L
+    L --> U2[Documentos listos para revisión]
 ```
 
 ---
@@ -107,21 +139,21 @@ flowchart LR
 ```mermaid
 sequenceDiagram
     participant Usuario
-    participant Karen
-    participant SP as SharePoint (Carpeta)
+    participant LoopWise
+    participant SP as SharePoint
     participant PA as Power Automate
-    participant Excel
+    participant T as Plantillas CJ
+    participant Email as Borradores de correos
 
-    Usuario->>Karen: Consulta cómo gestionar facturas de viajes
-    Karen-->>Usuario: Indica carpeta de SharePoint para carga masiva
-    Usuario->>SP: Sube/modifica facturas PDF en la carpeta
-    SP-->>PA: Dispara flujo al detectar cambio en la carpeta
-    PA->>SP: Lee facturas y extrae campos clave
-    PA->>PA: Valida estructura y formato de los datos
-    PA->>Excel: Actualiza hoja contable institucional
-    Excel-->>PA: Confirma actualización
-    PA-->>Karen: Estado del proceso y resumen
-    Karen-->>Usuario: Confirma procesamiento y acceso al Excel actualizado
+    Usuario->>LoopWise: Carga documento legal o solicita preparación
+    LoopWise->>SP: Envía documento a carpeta de procesamiento
+    SP-->>PA: Dispara flujo automático
+    PA->>SP: Extrae datos clave del archivo
+    PA->>LoopWise: Devuelve información estructurada
+    LoopWise->>T: Llena plantilla legal (RFP / Engagement Letter)
+    T-->>LoopWise: Documento generado
+    LoopWise->>Email: Genera borrador de correo
+    Email-->>Usuario: Recibe documento y correo listos para revisión
 ```
 
 ---
@@ -129,20 +161,20 @@ sequenceDiagram
 ## ✍️ Guía de prompts
 <a id="guia-de-prompts"></a>
 
-* **Rol del sistema**: Agente institucional para automatización contable y apoyo en la gestión de facturas de viajes.  
-* **Rol del usuario**: Consulta cómo cargar, revisar o validar facturas y resultados del flujo.  
-* **Restricciones**:  
-  * Responder únicamente con procesos oficiales definidos por el área contable.  
-  * Guiar siempre al usuario hacia la carpeta de SharePoint y el Excel institucional configurados.  
+* **Rol del sistema**: Agente institucional para automatización legal.  
+* **Rol del usuario**: Cargar documentos legales o solicitar generación de plantillas.  
+* **Restricciones**:
+  * Usar únicamente plantillas oficiales de CJ.  
+  * Mantener tono jurídico corporativo.  
+  * No inventar normativa.  
 
-**Plantilla ejemplo del prompt utilizado:**
+**Ejemplo de prompt utilizado:**
 
 ```md
-Eres Karen, un agente institucional para gestión automatizada de facturas de viajes.
-Objetivo: guiar al usuario en la carga de facturas, explicar el funcionamiento del flujo automático
-y ayudarle a acceder a los resultados en el Excel institucional.
-Formato: respuestas claras, institucionales y orientadas al paso a paso.
-Fuentes: Carpeta de SharePoint oficial definida para facturas y Excel institucional contable.
+Eres LoopWise, un agente institucional para automatización legal en Consultoría Jurídica.
+Objetivo: extraer datos clave de documentos legales, llenar plantillas corporativas y generar borradores de correos.
+Tono: legal, profesional y estandarizado.
+Fuentes: Plantillas corporativas CJ y documentos cargados por el usuario.
 ```
 
 ---
@@ -150,31 +182,28 @@ Fuentes: Carpeta de SharePoint oficial definida para facturas y Excel institucio
 ## ✅ Pruebas y calidad
 <a id="pruebas-y-calidad"></a>
 
-* **Pruebas funcionales**: verificación de extracción correcta de todos los campos contables definidos.  
-* **Pruebas con facturas reales**: distintos formatos de proveedores, agencias y aerolíneas.  
-* **Pruebas de rendimiento**: validación de tiempos de actualización (menos de 5 minutos desde la carga/modificación en la carpeta).  
-* **Pruebas de disparador**: confirmación de que el flujo se activa al **agregar, modificar o actualizar** un archivo en la carpeta configurada.  
-* **Revisión manual** por el equipo contable y por **Karen Castañeda**.  
+* **Pruebas de extracción**: correcta identificación de partes, honorarios y plazos.  
+* **Pruebas de plantillas**: llenado automático de engagement letters y RFPs.  
+* **Revisión jurídica**: validación con Sofía Isaza.  
+* **Pruebas de comunicaciones**: generación de correos uniformes.  
+* **Documentación base:** LoopWise 1.pdf, LoopWise 3.pdf.  
 
 ---
 
 ## ❓ FAQ
 <a id="faq"></a>
 
-**¿Qué facturas procesa Karen?**  
-Facturas de viajes en formato PDF cargadas en la carpeta de SharePoint configurada para el proceso.
+**¿Qué documentos procesa LoopWise?**  
+Propuestas, engagement letters, RFPs, retainer agreements y documentos legales similares.
 
-**¿Es necesario ejecutar algo manualmente cada vez?**  
-No. El flujo se **activa automáticamente** cuando se agrega, modifica o actualiza un archivo en la carpeta definida.
+**¿Genera documentos automáticamente?**  
+Sí, llenando plantillas corporativas con datos extraídos.
 
-**¿Actualiza automáticamente el Excel institucional?**  
-Sí. Cada ejecución del flujo actualiza la hoja contable institucional con los datos extraídos.
+**¿Puede generar correos formales?**  
+Sí, siguiendo lenguaje institucional estandarizado.
 
-**¿Puede adaptarse a otros procesos contables?**  
-Sí, gracias a su arquitectura modular basada en Power Automate y su capacidad de adaptación a nuevos formatos.
-
-**¿Dónde se almacena la información?**  
-En **SharePoint institucional** (facturas y control de versiones) y en el **Excel contable oficial** (consolidación de datos).
+**¿Es escalable?**  
+Sí, puede extenderse a otros contratos o procesos legales.
 
 ---
 
@@ -186,5 +215,4 @@ Este proyecto está bajo la licencia **MIT**. Consulta `LICENSE`.
 ---
 
 ### Créditos
-
-Hecho con ❤️ por Raymond Arteaga y Karen Castañeda.
+Hecho con ❤️ por Christopher Acosta y Sofía Isaza.
