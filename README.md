@@ -35,7 +35,7 @@ El equipo de Innovación te compartirá los archivos y la configuración necesar
 <a id="que-hace-karen"></a>
 
 ### 🔍 Extracción automática de datos desde facturas PDF
-Karen identifica y estructura campos claves como:
+Karen forma parte de un flujo automatizado que identifica y estructura campos claves como:
 
 - Número de factura  
 - Fecha de emisión  
@@ -48,35 +48,40 @@ Karen identifica y estructura campos claves como:
 - Medio de pago  
 - Observaciones  
 
+La extracción se realiza de forma **automática** cada vez que se agrega, modifica o actualiza un archivo en la carpeta de SharePoint definida para el proceso.
+
 ### 📂 Carga masiva en SharePoint  
-Permite procesar **varias facturas simultáneamente**, facilitando cierres mensuales.
+El usuario puede cargar **varias facturas simultáneamente** en la carpeta de SharePoint configurada.  
+Cada vez que se agrega o modifica un archivo, el flujo se **activa automáticamente**, sin intervención manual adicional.
 
 ### 📊 Actualización automática en Excel institucional  
-Los datos extraídos se reflejan en la hoja contable en **menos de 5 minutos**.
+El flujo procesa los datos extraídos y los refleja en el **Excel institucional contable** en **menos de 5 minutos**, manteniendo la información consolidada y actualizada.
 
 ### 🧠 Entrenamiento adaptable  
-El flujo reconoce **nuevos formatos de facturas** sin necesidad de reconfigurar el sistema completo.
+El flujo puede reconocer **nuevos formatos de facturas** sin necesidad de rehacer todo el diseño, permitiendo ajustarse a variantes de proveedores, agencias o aerolíneas.
 
 ---
 
 ## 🛠️ Historia y desarrollo
 <a id="historia-y-desarrollo"></a>
 
-* Karen surge como respuesta a la necesidad del área contable de **agilizar la gestión de facturas de viajes**, un proceso históricamente manual y propenso a errores.  
-* El diseño y validación del flujo fue realizado en colaboración con **Karen Castañeda**, quien verificó la mejora significativa en tiempos y precisión.  
-* Ajustes incorporados durante el desarrollo:  
-  - Reducción de notificaciones por correo.  
-  - Acceso directo a carpeta SharePoint para **carga masiva eficiente**.  
-* El agente demostró **incremento en eficiencia** y **mejor experiencia de usuario** desde la primera iteración operativa.
+* Karen surge como respuesta a la necesidad del área contable de **agilizar la gestión de facturas de viajes** y reducir errores de transcripción manual.  
+* El agente y su flujo asociado fueron desarrollados en colaboración con **Karen Castañeda**, quien validó el comportamiento del sistema y las mejoras en tiempos de cierre.  
+* Durante las iteraciones se realizaron ajustes clave:  
+  - Reducción de notificaciones por correo para evitar saturación.  
+  - Acceso directo a la carpeta de SharePoint indicada por el usuario para **carga masiva eficiente**.  
+  - Activación automática del flujo cuando se **agrega, modifica o actualiza** un archivo en dicha carpeta.  
+* El resultado fue una mejora notable en la **eficiencia del proceso** y en la **experiencia del usuario** contable.
 
 ---
 
 ## 🧠 ¿Qué lo hace especial?
 
-* Automatiza completamente un proceso contable crítico.  
-* Reduce drásticamente errores de transcripción.  
-* Se adapta a facturas nuevas sin necesidad de rehacer el flujo.  
-* Integra nativamente herramientas M365: Teams, SharePoint, Excel y Power Automate.  
+* Automatiza completamente un proceso contable crítico, desde la carga hasta el registro.  
+* Reduce drásticamente errores de transcripción manual.  
+* Se integra de forma natural con herramientas **M365** (Teams, SharePoint, Excel y Power Automate).  
+* Se activa automáticamente ante cambios en la carpeta de trabajo, reduciendo fricción operativa.  
+* Es escalable a otros tipos de facturas o procesos contables similares.
 
 ---
 
@@ -87,11 +92,12 @@ El flujo reconoce **nuevos formatos de facturas** sin necesidad de reconfigurar 
 
 ```mermaid
 flowchart LR
-    U[Usuario] --> K[Karen]
-    K --> S[Carpeta SharePoint<br>Carga masiva]
-    S --> F[Power Automate<br>Extracción y validación]
-    F --> E[Excel institucional<br>Actualización automática]
-    E --> U2[Confirmación al usuario]
+    U[Usuario] --> SP[Carpeta SharePoint<br>Facturas de viajes]
+    SP -->|Nuevo/actualizado/modificado archivo| PA[Power Automate<br>Flujo automático]
+    PA --> X[Extracción y validación de datos]
+    X --> E[Excel institucional<br>Hoja contable]
+    E --> K[Karen<br>Resumen y apoyo al usuario]
+    K --> U2[Usuario recibe confirmación<br>e instrucciones]
 ```
 
 ---
@@ -102,20 +108,20 @@ flowchart LR
 sequenceDiagram
     participant Usuario
     participant Karen
-    participant SP as SharePoint
+    participant SP as SharePoint (Carpeta)
     participant PA as Power Automate
     participant Excel
 
-    Usuario->>Karen: Inicia conversación en Teams
-    Karen->>Usuario: Solicita carga masiva de facturas
-    Usuario->>SP: Sube archivos PDF a la carpeta
-    SP->>PA: Dispara flujo automatizado
+    Usuario->>Karen: Consulta cómo gestionar facturas de viajes
+    Karen-->>Usuario: Indica carpeta de SharePoint para carga masiva
+    Usuario->>SP: Sube/modifica facturas PDF en la carpeta
+    SP-->>PA: Dispara flujo al detectar cambio en la carpeta
     PA->>SP: Lee facturas y extrae campos clave
-    PA->>PA: Valida estructura y formato
-    PA->>Excel: Actualiza datos en hoja institucional
-    Excel-->>PA: Confirmación de actualización
-    PA-->>Karen: Proceso completado
-    Karen-->>Usuario: Descarga disponible y resumen de resultados
+    PA->>PA: Valida estructura y formato de los datos
+    PA->>Excel: Actualiza hoja contable institucional
+    Excel-->>PA: Confirma actualización
+    PA-->>Karen: Estado del proceso y resumen
+    Karen-->>Usuario: Confirma procesamiento y acceso al Excel actualizado
 ```
 
 ---
@@ -123,19 +129,20 @@ sequenceDiagram
 ## ✍️ Guía de prompts
 <a id="guia-de-prompts"></a>
 
-* **Rol del sistema**: Agente institucional para automatización contable.  
-* **Rol del usuario**: Solicita procesamiento y carga masiva de facturas.  
+* **Rol del sistema**: Agente institucional para automatización contable y apoyo en la gestión de facturas de viajes.  
+* **Rol del usuario**: Consulta cómo cargar, revisar o validar facturas y resultados del flujo.  
 * **Restricciones**:  
-  * Responder únicamente con procesos oficiales del área contable.  
-  * Usar exclusivamente la carpeta de SharePoint y el Excel institucional configurados.  
+  * Responder únicamente con procesos oficiales definidos por el área contable.  
+  * Guiar siempre al usuario hacia la carpeta de SharePoint y el Excel institucional configurados.  
 
 **Plantilla ejemplo del prompt utilizado:**
 
 ```md
 Eres Karen, un agente institucional para gestión automatizada de facturas de viajes.
-Objetivo: guiar al usuario, validar facturas y activar el flujo contable automatizado.
+Objetivo: guiar al usuario en la carga de facturas, explicar el funcionamiento del flujo automático
+y ayudarle a acceder a los resultados en el Excel institucional.
 Formato: respuestas claras, institucionales y orientadas al paso a paso.
-Fuentes: Carpeta SharePoint oficial y Excel institucional.
+Fuentes: Carpeta de SharePoint oficial definida para facturas y Excel institucional contable.
 ```
 
 ---
@@ -143,9 +150,10 @@ Fuentes: Carpeta SharePoint oficial y Excel institucional.
 ## ✅ Pruebas y calidad
 <a id="pruebas-y-calidad"></a>
 
-* **Pruebas funcionales**: extracción correcta de todos los campos contables.  
-* **Pruebas con facturas reales**: distintos formatos de agencias y aerolíneas.  
-* **Pruebas de rendimiento**: carga masiva y actualización en menos de 5 minutos.  
+* **Pruebas funcionales**: verificación de extracción correcta de todos los campos contables definidos.  
+* **Pruebas con facturas reales**: distintos formatos de proveedores, agencias y aerolíneas.  
+* **Pruebas de rendimiento**: validación de tiempos de actualización (menos de 5 minutos desde la carga/modificación en la carpeta).  
+* **Pruebas de disparador**: confirmación de que el flujo se activa al **agregar, modificar o actualizar** un archivo en la carpeta configurada.  
 * **Revisión manual** por el equipo contable y por **Karen Castañeda**.  
 
 ---
@@ -154,16 +162,19 @@ Fuentes: Carpeta SharePoint oficial y Excel institucional.
 <a id="faq"></a>
 
 **¿Qué facturas procesa Karen?**  
-Facturas de viajes en formato PDF cargadas a la carpeta SharePoint designada.
+Facturas de viajes en formato PDF cargadas en la carpeta de SharePoint configurada para el proceso.
+
+**¿Es necesario ejecutar algo manualmente cada vez?**  
+No. El flujo se **activa automáticamente** cuando se agrega, modifica o actualiza un archivo en la carpeta definida.
 
 **¿Actualiza automáticamente el Excel institucional?**  
-Sí, en cada ejecución del flujo.
+Sí. Cada ejecución del flujo actualiza la hoja contable institucional con los datos extraídos.
 
 **¿Puede adaptarse a otros procesos contables?**  
-Sí, gracias a su arquitectura modular basada en Power Automate.
+Sí, gracias a su arquitectura modular basada en Power Automate y su capacidad de adaptación a nuevos formatos.
 
 **¿Dónde se almacena la información?**  
-En **SharePoint institucional** y en el **Excel contable oficial**.
+En **SharePoint institucional** (facturas y control de versiones) y en el **Excel contable oficial** (consolidación de datos).
 
 ---
 
@@ -176,4 +187,4 @@ Este proyecto está bajo la licencia **MIT**. Consulta `LICENSE`.
 
 ### Créditos
 
-Hecho por Raymond Arteaga y Karen Castañeda.
+Hecho con ❤️ por Raymond Arteaga y Karen Castañeda.
