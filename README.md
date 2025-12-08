@@ -2,7 +2,7 @@
   <img src="./media/banner.webp" alt="Banner Laboratorio de Innovación"/>
 </p>
 
-# 🤖 Karen: Agente de Gestión de Facturas de Viajes
+# 🤖 Odin+: Agente Helpjuice para la DSSD
 
 ![License](https://img.shields.io/badge/license-MIT-informational)
 ![Contributions](https://img.shields.io/badge/contributions-welcome-success)
@@ -10,78 +10,98 @@
 ![Issues](https://img.shields.io/github/issues/lab-innovacion-caf/Agentes)
 ![Stars](https://img.shields.io/github/stars/lab-innovacion-caf/Agentes)
 
-> **Karen** es un **agente institucional desarrollado en Copilot Studio** para automatizar la **gestión de facturas de viajes**, optimizando la carga, validación y consolidación de datos contables en los procesos internos de CAF.
+> **Odin+** es el **agente institucional de la Dirección de Sistemas y Soluciones Digitales (DSSD)** para consultar el conocimiento del **Helpjuice/ODIN** mediante una interfaz conversacional en Copilot Studio.  
+Fue diseñado para permitir que usuarios internos encuentren artículos, procedimientos y guías del KB de forma rápida, natural y con enlaces directos a la base de conocimiento.
 
 ---
 
-👉 **Si quieres descargar un agente y editarlo en tu propio Copilot Studio**, por favor escribe a [innovacion@caf.com](mailto:innovacion@caf.com).  
-El equipo de Innovación te compartirá los archivos y la configuración necesarios.
+👉 **Para solicitar acceso, instalación o descarga del agente**, por favor escribe a [innovacion@caf.com](mailto:innovacion@caf.com).  
 
 ---
 
 ## 🧭 Tabla de contenidos
 
-- [¿Qué hace Karen?](#que-hace-karen)
+- [¿Qué hace Odin+?](#que-hace-odin)
+- [Contexto organizacional](#contexto-organizacional)
 - [Historia y desarrollo](#historia-y-desarrollo)
 - [Arquitectura y funcionamiento](#arquitectura-y-funcionamiento)
 - [Guía de prompts](#guia-de-prompts)
+- [Acceso y despliegue](#acceso-y-despliegue)
 - [Pruebas y calidad](#pruebas-y-calidad)
 - [FAQ](#faq)
 - [Licencia](#licencia)
 
 ---
 
-## 🧩 ¿Qué hace Karen?
-<a id="que-hace-karen"></a>
+## 🧩 ¿Qué hace Odin+?
+<a id="que-hace-odin"></a>
 
-### 🔍 Extracción automática de datos desde facturas PDF
-Karen forma parte de un flujo automatizado que identifica y estructura campos claves como:
+### 🔍 Consultas al Knowledge Base (Helpjuice / ODIN)
+Odin+ permite que cualquier usuario de DSSD:
 
-- Número de factura  
-- Fecha de emisión  
-- Nombre del pasajero  
-- Nombre y RUC del emisor  
-- Descripción del servicio  
-- Total a pagar y moneda  
-- Número de CMB  
-- Fecha del viaje  
-- Medio de pago  
-- Observaciones  
+- Formule preguntas en lenguaje natural.  
+- Obtenga respuestas basadas **únicamente** en la base de conocimiento ODIN/Helpjuice.  
+- Reciba enlaces directos a artículos oficiales:  
+  **https://odin-kb.helpjuice.com/es_MX**
 
-La extracción se realiza de forma **automática** cada vez que se agrega, modifica o actualiza un archivo en la carpeta de SharePoint definida para el proceso.
+### 📚 Respuestas controladas y trazables
+El agente:
 
-### 📂 Carga masiva en SharePoint  
-El usuario puede cargar **varias facturas simultáneamente** en la carpeta de SharePoint configurada.  
-Cada vez que se agrega o modifica un archivo, el flujo se **activa automáticamente**, sin intervención manual adicional.
+- No improvisa contenido fuera del KB.  
+- Garantiza referencias claras al artículo fuente.  
+- Mantiene consistencia en terminología y procedimientos institucionales.
 
-### 📊 Actualización automática en Excel institucional  
-El flujo procesa los datos extraídos y los refleja en el **Excel institucional contable** en **menos de 5 minutos**, manteniendo la información consolidada y actualizada.
+### 🔗 Integración con M365 / Teams
+El agente se publica en Teams para pruebas y uso interno.  
+Los enlaces al agente se compartieron en el hilo **“Integración HelpJuice - Copilot”**.
 
-### 🧠 Entrenamiento adaptable  
-El flujo puede reconocer **nuevos formatos de facturas** sin necesidad de rehacer todo el diseño, permitiendo ajustarse a variantes de proveedores, agencias o aerolíneas.
+
+
+---
+
+## 🧠 Contexto organizacional
+<a id="contexto-organizacional"></a>
+
+**Área responsable:** Dirección de Sistemas y Soluciones Digitales (DSSD)  
+**Sponsor / Owner:** TACURI, RENE (CONSULTOR EXTERNO)  
+**Coordinación operativa:** Braulio Salazar y Raymond Arteaga  
+**Usuarios de prueba:** SEGURA, MARCO y MARQUEZ, ANTONIO
+
+Odin+ reemplaza formalmente el nombre “Agente Helpjuice”.
+
+En el **listado oficial de agentes**, aparece como:
+
+> **Odin+ — Entregado (DSSD)**
 
 ---
 
 ## 🛠️ Historia y desarrollo
 <a id="historia-y-desarrollo"></a>
 
-* Karen surge como respuesta a la necesidad del área contable de **agilizar la gestión de facturas de viajes** y reducir errores de transcripción manual.  
-* El agente y su flujo asociado fueron desarrollados en colaboración con **Karen Castañeda**, quien validó el comportamiento del sistema y las mejoras en tiempos de cierre.  
-* Durante las iteraciones se realizaron ajustes clave:  
-  - Reducción de notificaciones por correo para evitar saturación.  
-  - Acceso directo a la carpeta de SharePoint indicada por el usuario para **carga masiva eficiente**.  
-  - Activación automática del flujo cuando se **agrega, modifica o actualiza** un archivo en dicha carpeta.  
-* El resultado fue una mejora notable en la **eficiencia del proceso** y en la **experiencia del usuario** contable.
+### Documentos y materiales de referencia
+- Diagramas, notas y lineamientos enviados por TACURI, RENE.  
+- Conversaciones en Teams de:  
+  - Branding del agente  
+  - Accesos  
+  - Integración con Copilot  
+- Archivos internos del KB ODIN/Helpjuice.
+
+### Reuniones y validaciones
+- *Integración HelpJuice - Copilot* (varias sesiones)  
+- Chats operativos: habilitación de accesos, pruebas y revisión de resultados  
+- Actualización del agente en el catálogo institucional de DSSD
+
+Odin+ se consolidó como un agente estable y aprobado institucionalmente.
 
 ---
 
 ## 🧠 ¿Qué lo hace especial?
 
-* Automatiza completamente un proceso contable crítico, desde la carga hasta el registro.  
-* Reduce drásticamente errores de transcripción manual.  
-* Se integra de forma natural con herramientas **M365** (Teams, SharePoint, Excel y Power Automate).  
-* Se activa automáticamente ante cambios en la carpeta de trabajo, reduciendo fricción operativa.  
-* Es escalable a otros tipos de facturas o procesos contables similares.
+* Permite consultas naturales sobre contenido técnico en ODIN/Helpjuice  
+* Ahorra tiempo al evitar búsquedas manuales  
+* Provee respuestas con enlaces directos al artículo oficial  
+* Cumple lineamientos de gobernanza y catálogo de agentes de CAF  
+* Escalable a nuevos KB, categorías o repositorios institucionales  
 
 ---
 
@@ -92,12 +112,12 @@ El flujo puede reconocer **nuevos formatos de facturas** sin necesidad de rehace
 
 ```mermaid
 flowchart LR
-    U[Usuario] --> SP[Carpeta SharePoint<br>Facturas de viajes]
-    SP -->|Nuevo/actualizado/modificado archivo| PA[Power Automate<br>Flujo automático]
-    PA --> X[Extracción y validación de datos]
-    X --> E[Excel institucional<br>Hoja contable]
-    E --> K[Karen<br>Resumen y apoyo al usuario]
-    K --> U2[Usuario recibe confirmación<br>e instrucciones]
+    U[Usuario] --> O[Odin+]
+    O --> KB[Helpjuice / ODIN<br>Base de conocimiento oficial]
+    O --> L[Enlaces directos al artículo]
+    O --> A[Validación de permisos<br>Accesos DSSD]
+    KB --> O
+    O --> U2[Respuesta clara y trazable]
 ```
 
 ---
@@ -107,21 +127,16 @@ flowchart LR
 ```mermaid
 sequenceDiagram
     participant Usuario
-    participant Karen
-    participant SP as SharePoint (Carpeta)
-    participant PA as Power Automate
-    participant Excel
+    participant Odin as Odin+
+    participant KB as Helpjuice/ODIN
+    participant Permisos as Control de Accesos DSSD
 
-    Usuario->>Karen: Consulta cómo gestionar facturas de viajes
-    Karen-->>Usuario: Indica carpeta de SharePoint para carga masiva
-    Usuario->>SP: Sube/modifica facturas PDF en la carpeta
-    SP-->>PA: Dispara flujo al detectar cambio en la carpeta
-    PA->>SP: Lee facturas y extrae campos clave
-    PA->>PA: Valida estructura y formato de los datos
-    PA->>Excel: Actualiza hoja contable institucional
-    Excel-->>PA: Confirma actualización
-    PA-->>Karen: Estado del proceso y resumen
-    Karen-->>Usuario: Confirma procesamiento y acceso al Excel actualizado
+    Usuario->>Odin: Realiza una pregunta
+    Odin->>Permisos: Verifica acceso del usuario
+    Permisos-->>Odin: Resultado de validación
+    Odin->>KB: Consulta artículo o proceso relevante
+    KB-->>Odin: Devuelve contenido oficial
+    Odin-->>Usuario: Proporciona respuesta + enlace al KB
 ```
 
 ---
@@ -129,52 +144,66 @@ sequenceDiagram
 ## ✍️ Guía de prompts
 <a id="guia-de-prompts"></a>
 
-* **Rol del sistema**: Agente institucional para automatización contable y apoyo en la gestión de facturas de viajes.  
-* **Rol del usuario**: Consulta cómo cargar, revisar o validar facturas y resultados del flujo.  
-* **Restricciones**:  
-  * Responder únicamente con procesos oficiales definidos por el área contable.  
-  * Guiar siempre al usuario hacia la carpeta de SharePoint y el Excel institucional configurados.  
+* **Rol del sistema:** Agente institucional que responde exclusivamente con información del KB ODIN/Helpjuice.  
+* **Rol del usuario:** Consulta artículos, procesos, pasos o definiciones técnicas.  
+* **Restricciones:**  
+  * No inventar contenido fuera del KB.  
+  * Siempre incluir referencia o enlace.  
+  * Validar acceso según políticas de DSSD.  
 
-**Plantilla ejemplo del prompt utilizado:**
+**Prompt ejemplo usado durante el desarrollo:**
 
 ```md
-Eres Karen, un agente institucional para gestión automatizada de facturas de viajes.
-Objetivo: guiar al usuario en la carga de facturas, explicar el funcionamiento del flujo automático
-y ayudarle a acceder a los resultados en el Excel institucional.
-Formato: respuestas claras, institucionales y orientadas al paso a paso.
-Fuentes: Carpeta de SharePoint oficial definida para facturas y Excel institucional contable.
+Eres Odin+, un agente institucional conectado al KB Helpjuice/ODIN.
+Debes responder únicamente con información contenida en los artículos oficiales.
+Debe incluirse un enlace directo al artículo correspondiente.
+Si el usuario no tiene acceso, indícalo y muestra procedimiento de solicitud.
 ```
+
+---
+
+## 🚀 Acceso y despliegue
+<a id="acceso-y-despliegue"></a>
+
+**📚 Base de conocimiento:**  
+https://odin-kb.helpjuice.com/es_MX
+
+**🤖 Enlace al agente (Interno M365/Teams):**  
+Compartido en el hilo *Integración HelpJuice - Copilot*.
+
+**🔐 Permisos:**  
+Acceso otorgado a usuarios específicos, con ajustes realizados tras pruebas.
 
 ---
 
 ## ✅ Pruebas y calidad
 <a id="pruebas-y-calidad"></a>
 
-* **Pruebas funcionales**: verificación de extracción correcta de todos los campos contables definidos.  
-* **Pruebas con facturas reales**: distintos formatos de proveedores, agencias y aerolíneas.  
-* **Pruebas de rendimiento**: validación de tiempos de actualización (menos de 5 minutos desde la carga/modificación en la carpeta).  
-* **Pruebas de disparador**: confirmación de que el flujo se activa al **agregar, modificar o actualizar** un archivo en la carpeta configurada.  
-* **Revisión manual** por el equipo contable y por **Karen Castañeda**.  
+* Validación de respuestas únicamente desde el KB  
+* Confirmación de funcionamiento por parte de:  
+  - TACURI, RENE  
+  - SEGURA, MARCO  
+  - MARQUEZ, ANTONIO  
+* Revisión de branding y nombre final  
+* Verificación de enlaces y accesos  
+* Inclusión en el catálogo oficial de agentes como **"Entregado"**
 
 ---
 
 ## ❓ FAQ
 <a id="faq"></a>
 
-**¿Qué facturas procesa Karen?**  
-Facturas de viajes en formato PDF cargadas en la carpeta de SharePoint configurada para el proceso.
+**¿Odin+ responde sin usar el KB?**  
+No. Solo usa contenido del Helpjuice/ODIN.
 
-**¿Es necesario ejecutar algo manualmente cada vez?**  
-No. El flujo se **activa automáticamente** cuando se agrega, modifica o actualiza un archivo en la carpeta definida.
+**¿Qué pasa si el usuario no tiene acceso?**  
+El agente informa el procedimiento para solicitar permisos.
 
-**¿Actualiza automáticamente el Excel institucional?**  
-Sí. Cada ejecución del flujo actualiza la hoja contable institucional con los datos extraídos.
+**¿Puede ampliarse a otras bases de conocimiento?**  
+Sí, la arquitectura permite agregar nuevas fuentes oficiales.
 
-**¿Puede adaptarse a otros procesos contables?**  
-Sí, gracias a su arquitectura modular basada en Power Automate y su capacidad de adaptación a nuevos formatos.
-
-**¿Dónde se almacena la información?**  
-En **SharePoint institucional** (facturas y control de versiones) y en el **Excel contable oficial** (consolidación de datos).
+**¿Dónde se encuentra el KB?**  
+En: https://odin-kb.helpjuice.com/es_MX
 
 ---
 
@@ -186,5 +215,4 @@ Este proyecto está bajo la licencia **MIT**. Consulta `LICENSE`.
 ---
 
 ### Créditos
-
-Hecho con ❤️ por Raymond Arteaga y Karen Castañeda.
+Hecho por Raymond Arteaga.
