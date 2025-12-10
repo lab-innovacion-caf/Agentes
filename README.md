@@ -164,15 +164,6 @@ Cargar plantillas Excel, solicitar comparaciones, revisar reportes.
 - No improvisar reglas de validación  
 - Usar únicamente scripts y plantillas aprobadas  
 
-**Ejemplo de prompt interno:**
-
-```md
-Eres el Agente de Control Interno.
-Tu función es comparar poblaciones cargadas en plantillas Excel,
-validar datos con reglas predefinidas y generar reportes auditables.
-Debes mantener trazabilidad y registrar resultados en SharePoint.
-```
-
 ---
 
 ## ✅ Pruebas y calidad
