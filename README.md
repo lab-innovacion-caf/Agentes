@@ -2,7 +2,7 @@
   <img src="./media/banner.webp" alt="Banner Laboratorio de Innovación"/>
 </p>
 
-# 🤖 Asistente de Entrevistas — Gerencia de Administración y Capital Humano
+# 🤖 Agente de Control Interno — Dirección de Riesgo de Mercado, Operacional y Control Interno
 
 ![License](https://img.shields.io/badge/license-MIT-informational)
 ![Contributions](https://img.shields.io/badge/contributions-welcome-success)
@@ -10,16 +10,16 @@
 ![Issues](https://img.shields.io/github/issues/lab-innovacion-caf/Agentes)
 ![Stars](https://img.shields.io/github/stars/lab-innovacion-caf/Agentes)
 
-> El **Asistente de Entrevistas** es un **agente institucional desarrollado en Copilot Studio** para la **Gerencia de Administración y Capital Humano**, con el objetivo de automatizar la **generación de guiones, formularios y reportes de entrevistas**, reduciendo carga manual y asegurando consistencia en los procesos de reclutamiento y selección.
+> El **Agente de Control Interno** es una solución institucional creada en **Copilot Studio** para automatizar procesos clave de auditoría y control, reduciendo la carga manual en la comparación de poblaciones, validación de datos y generación de reportes auditables.
 
-Responsable institucional: **DANIELA RONDÓN**  
-
+Responsable del proceso: **Lucia Da Costa**  
+Estado: **Entregado y operativo**, con acceso a carpeta SharePoint (plantillas, scripts y manual de uso).
 
 ---
 
 ## 🧭 Tabla de contenidos
 
-- [¿Qué hace el Asistente de Entrevistas?](#que-hace-el-asistente-de-entrevistas)
+- [¿Qué hace el Agente de Control Interno?](#que-hace-el-agente-de-control-interno)
 - [Contexto y necesidad](#contexto-y-necesidad)
 - [Historia y desarrollo](#historia-y-desarrollo)
 - [Arquitectura y funcionamiento](#arquitectura-y-funcionamiento)
@@ -30,97 +30,83 @@ Responsable institucional: **DANIELA RONDÓN**
 
 ---
 
-## 🧩 ¿Qué hace el Asistente de Entrevistas?
-<a id="que-hace-el-asistente-de-entrevistas"></a>
+## 🧩 ¿Qué hace el Agente de Control Interno?
+<a id="que-hace-el-agente-de-control-interno"></a>
 
-### 🎤 Genera guiones personalizados para entrevistas
-Basados en:
+### 📊 Comparación automática de poblaciones
+El agente:
 
-- Descripción del cargo  
-- Competencias corporativas  
-- Preguntas técnicas  
-- Situacionales y de comportamiento  
+- Recibe archivos Excel cargados por el usuario.  
+- Ejecuta scripts internos para comparar poblaciones.  
+- Identifica diferencias, inconsistencias y registros faltantes.  
 
-El usuario define:
+### 🧪 Validación estructurada de datos
+Aplica reglas automáticas para revisar:
 
-- Número de preguntas  
-- Tipo de entrevista  
-- Plantilla deseada  
+- Campos obligatorios  
+- Formatos incorrectos  
+- Duplicados  
+- Trazabilidad de cambios  
 
-### 🧠 Genera **respuestas ideales** para cada pregunta
-Incluye:
+### 📝 Generación de reportes auditables
+Produce reportes claros y estandarizados para:
 
-- Respuesta modelo  
-- Explicación de criterios correctos  
-- Señales positivas y de alerta  
+- Auditorías internas  
+- Auditorías externas  
+- Reportes regulatorios  
 
-### 📄 Crea documentos automáticamente
-Compila preguntas y respuestas en un **Word institucional**, listo para expediente del candidato.
-
-### 📝 Automatiza el llenado de formularios
-Procesos incluidos:
-
-- Solicitud de empleo  
-- Información salarial  
-- Informe de entrevista  
-- Informe de selección  
+Cada reporte incluye registros detallados y hallazgos documentados.
 
 ---
 
 ## 🧠 Contexto y necesidad
 <a id="contexto-y-necesidad"></a>
 
-Antes del agente:
+Antes de este agente:
 
-- Los analistas preparaban manualmente entrevistas y formularios.  
-- Se redactaban reportes desde cero sin plantilla.  
-- Había inconsistencia entre entrevistas similares.  
+- La comparación de poblaciones se hacía manualmente en Excel.  
+- Las validaciones requerían análisis extensos por parte del equipo.  
+- Era difícil garantizar trazabilidad y reproducibilidad.  
 
-La necesidad institucional era:
+El problema principal: **altos tiempos operativos y riesgo de error humano**.
 
-- **Estandarizar entrevistas**
-- **Ahorrar tiempo operativo**
-- **Generar documentos automáticos**
-- **Centralizar información en expedientes digitales**
+**Objetivo institucional:** Automatizar procesos críticos de control interno y auditoría.
 
-Basado en documentos:  
-*Paso a Paso.docx* — *Cambios_Minuta_Daniela_17072025.docx*
+Confirmado en reuniones y correos con **Lucia Da Costa**, quien validó:
+
+- Plantillas oficiales  
+- Script de comparación  
+- Manual de uso  
+- Carpeta SharePoint para almacenamiento y trabajo colaborativo  
 
 ---
 
 ## 🛠️ Historia y desarrollo
 <a id="historia-y-desarrollo"></a>
 
-El agente fue desarrollado en colaboración con:
+El agente fue desarrollado en conjunto con:
 
-- **Daniela Rondón** (responsable de proceso)
-- Laboratorio de Innovación (InnovaLab)
+- Dirección de Riesgo de Mercado, Operacional y Control Interno  
+- InnovaLab  
 
-Fuentes utilizadas:
+Iteraciones incluyeron:
 
-- Lineamientos corporativos de entrevistas  
-- Plantillas institucionales de selección  
-- Requerimientos legales y normativos  
+- Ajustes a la plantilla Excel  
+- Revisión del script de comparación  
+- Validación del formato de los reportes  
+- Pruebas con casos reales de auditoría  
 
-Iteraciones realizadas:
-
-- Ajuste de tono y estilo de preguntas  
-- Inclusión de respuestas ideales  
-- Diseño del Word final para expediente  
-- Validaciones con usuarios de Capital Humano  
-
-
+El agente está **operativo y entregado**, listo para uso por los analistas y auditores.
 
 ---
 
 ## 🧠 ¿Qué lo hace especial?
 
-- Estándares homogéneos para todo el proceso de entrevistas  
-- Preguntas basadas en competencias  
-- Respuestas ideales explicadas  
-- Generación automática de documentos  
-- Integración completa con flujos M365  
-- Facilita auditoría, trazabilidad y archivo digital  
+* Reemplaza procesos manuales de alto riesgo  
+* Comparación automatizada con precisión consistente  
+* Reportes estructurados y trazables  
+* Integración con flujos M365 / SharePoint  
+* Puede extenderse a múltiples tipos de poblaciones o controles  
 
 ---
 
@@ -131,13 +117,12 @@ Iteraciones realizadas:
 
 ```mermaid
 flowchart LR
-    U[Usuario] --> A[Asistente de Entrevistas]
-    A --> D[Datos del puesto<br>Descripción del cargo]
-    U --> P[Preferencias del usuario<br>Número de preguntas / Tipo de entrevista]
-    A --> G[Generación de guion<br>Preguntas + Respuestas ideales]
-    G --> W[Documento Word<br>Guion o Informe]
-    W --> SP[SharePoint<br>Expediente del candidato]
-    SP --> U2[Archivo listo para uso]
+    U[Usuario] --> C[Agente de Control Interno]
+    C --> X[Plantillas Excel<br>Carga de poblaciones]
+    X --> S[Script automático<br>Comparación y validación]
+    S --> R[Reporte estandarizado<br>Hallazgos y diferencias]
+    R --> SP[SharePoint<br>Registro y trazabilidad]
+    SP --> U2[Usuario recibe reporte final]
 ```
 
 ---
@@ -147,20 +132,20 @@ flowchart LR
 ```mermaid
 sequenceDiagram
     participant Usuario
-    participant Asistente
-    participant Plantillas as Plantillas CH
-    participant Word as Documento Word
+    participant Agente as Agente Control Interno
+    participant Excel as Plantillas Excel
+    participant Script as Script de comparación
     participant SP as SharePoint
 
-    Usuario->>Asistente: Solicita guion o formulario
-    Asistente->>Usuario: Pide descripción y preferencias
-    Usuario->>Asistente: Envía información
-    Asistente->>Plantillas: Selecciona plantilla adecuada
-    Plantillas-->>Asistente: Devuelve estructura
-    Asistente->>Word: Genera preguntas + respuestas ideales
-    Word-->>Asistente: Documento final
-    Asistente->>SP: Guarda documento en expediente del candidato
-    SP-->>Usuario: Archivo disponible para descarga
+    Usuario->>Agente: Solicita comparación de poblaciones
+    Agente->>Usuario: Solicita archivo o plantilla
+    Usuario->>Excel: Carga datos en plantilla
+    Usuario->>SP: Sube archivo a SharePoint
+    SP-->>Agente: Notifica archivo disponible
+    Agente->>Script: Ejecuta comparación automática
+    Script-->>Agente: Resultados, diferencias, inconsistencias
+    Agente->>SP: Genera reporte y registra trazabilidad
+    SP-->>Usuario: Reporte listo para descarga
 ```
 
 ---
@@ -169,23 +154,23 @@ sequenceDiagram
 <a id="guia-de-prompts"></a>
 
 ### ✔️ Rol del sistema
-Agente institucional para automatizar entrevistas y formularios de selección.
+Agente institucional para automatización de controles, auditoría operativa y validación de poblaciones.
 
 ### ✔️ Rol del usuario
-Solicitar preguntas, respuestas ideales o documentos.
+Cargar plantillas Excel, solicitar comparaciones, revisar reportes.
 
 ### ✔️ Restricciones
-- Mantener tono profesional, corporativo y neutral.  
-- Utilizar solo plantillas oficiales.  
-- No generar preguntas discriminatorias.  
+- Seguir estructura oficial de reportes  
+- No improvisar reglas de validación  
+- Usar únicamente scripts y plantillas aprobadas  
 
 **Ejemplo de prompt interno:**
 
 ```md
-Eres el Asistente de Entrevistas para Capital Humano.
-Generas guiones, preguntas, respuestas ideales y documentos institucionales
-basados en la descripción del puesto y lineamientos corporativos.
-Debes mantener un estilo formal y profesional.
+Eres el Agente de Control Interno.
+Tu función es comparar poblaciones cargadas en plantillas Excel,
+validar datos con reglas predefinidas y generar reportes auditables.
+Debes mantener trazabilidad y registrar resultados en SharePoint.
 ```
 
 ---
@@ -193,38 +178,38 @@ Debes mantener un estilo formal y profesional.
 ## ✅ Pruebas y calidad
 <a id="pruebas-y-calidad"></a>
 
-- Verificación de preguntas vs competencias corporativas  
-- Calidad de respuestas ideales  
-- Alineación con *Paso a Paso.docx*  
-- Validación del documento Word final  
-- Pruebas de integración con SharePoint  
-- Revisión por **Daniela Rondón**  
+* Pruebas funcionales con poblaciones reales  
+* Validación del script de comparación  
+* Evaluación de rendimiento con archivos extensos  
+* Revisión de reportes por auditores internos  
+* Verificación de trazabilidad en SharePoint  
+* Validación final por **Lucia Da Costa**  
 
 ---
 
 ## ❓ FAQ
 <a id="faq"></a>
 
-**¿Puede generar entrevistas técnicas?**  
-Sí, si el usuario provee descripción o requisitos.
+**¿El agente compara cualquier archivo Excel?**  
+Debe seguir la plantilla oficial.
 
-**¿Genera respuestas ideales automáticamente?**  
-Sí, basadas en criterios de alta calidad.
+**¿El reporte es automático?**  
+Sí. El agente genera un reporte estructurado con diferencias e inconsistencias.
 
-**¿Dónde se guarda el documento?**  
-En el expediente del candidato en SharePoint.
+**¿Se puede auditar el proceso?**  
+Sí. Todo queda registrado en SharePoint.
 
-**¿Es posible personalizar el número de preguntas?**  
-Totalmente.
+**¿Puede crecer a otros controles?**  
+Totalmente. La arquitectura admite nuevos scripts y reglas de validación.
 
 ---
 
 ## 📄 Licencia
 <a id="licencia"></a>
 
-Proyecto bajo licencia **MIT**. Consulta `LICENSE`.
+Este proyecto está bajo la licencia **MIT**. Consulta `LICENSE`.
 
 ---
 
 ### Créditos
-Hecho con ❤️ por Christopher Acosta, Daniela Rondón y el Laboratorio de Innovación (InnovaLab).
+Hecho con ❤️ por Raymond Arteaga y la Dirección de Riesgo de Mercado, Operacional y Control Interno.
