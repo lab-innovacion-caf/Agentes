@@ -2,7 +2,8 @@
   <img src="./media/banner.webp" alt="Banner Laboratorio de Innovación"/>
 </p>
 
-# 🤖 Asistente de Entrevistas — Gerencia de Administración y Capital Humano
+# 🤖 Ray: Agente Institucional de Reportes de Contingencias y Simulacros  
+## Dirección de Riesgo Operacional y Control Interno (DRMOCI)
 
 ![License](https://img.shields.io/badge/license-MIT-informational)
 ![Contributions](https://img.shields.io/badge/contributions-welcome-success)
@@ -10,19 +11,24 @@
 ![Issues](https://img.shields.io/github/issues/lab-innovacion-caf/Agentes)
 ![Stars](https://img.shields.io/github/stars/lab-innovacion-caf/Agentes)
 
-> El **Asistente de Entrevistas** es un **agente institucional desarrollado en Copilot Studio** para la **Gerencia de Administración y Capital Humano**, con el objetivo de automatizar la **generación de guiones, formularios y reportes de entrevistas**, reduciendo carga manual y asegurando consistencia en los procesos de reclutamiento y selección.
+> **Ray** es un **agente institucional desarrollado en Copilot Studio** para la  
+> **Dirección de Riesgo Operacional y Control Interno (DRMOCI)**.  
+> Su propósito es **automatizar la generación de reportes institucionales sobre simulacros y contingencias**, a partir de notas cargadas por los responsables de cada área, garantizando estandarización, trazabilidad y eficiencia.
 
-Responsable institucional: **DANIELA RONDÓN**  
-
+Solicitado por: **Equipo de continuidad de negocio y gestión de contingencias (DRMOCI)**  
+Desarrollado por: **Raymond Arteaga – Laboratorio de Innovación CAF**  
+Estado: **Entregado y operativo**
 
 ---
 
 ## 🧭 Tabla de contenidos
 
-- [¿Qué hace el Asistente de Entrevistas?](#que-hace-el-asistente-de-entrevistas)
+- [¿Qué hace Ray?](#que-hace-ray)
 - [Contexto y necesidad](#contexto-y-necesidad)
 - [Historia y desarrollo](#historia-y-desarrollo)
 - [Arquitectura y funcionamiento](#arquitectura-y-funcionamiento)
+- [Flujo funcional](#flujo-funcional)
+- [Plantilla institucional](#plantilla-institucional)
 - [Guía de prompts](#guia-de-prompts)
 - [Pruebas y calidad](#pruebas-y-calidad)
 - [FAQ](#faq)
@@ -30,97 +36,109 @@ Responsable institucional: **DANIELA RONDÓN**
 
 ---
 
-## 🧩 ¿Qué hace el Asistente de Entrevistas?
-<a id="que-hace-el-asistente-de-entrevistas"></a>
+## 🧩 ¿Qué hace Ray?
+<a id="que-hace-ray"></a>
 
-### 🎤 Genera guiones personalizados para entrevistas
-Basados en:
+### 📝 Carga de notas
+Los encargados suben sus reportes de simulacros y contingencias en cualquier formato común:
 
-- Descripción del cargo  
-- Competencias corporativas  
-- Preguntas técnicas  
-- Situacionales y de comportamiento  
+- Texto libre  
+- Word (.docx)  
+- PDF  
+- Notas copiadas desde correo  
 
-El usuario define:
+Ray guía al usuario para asegurar que la información esté completa.
 
-- Número de preguntas  
-- Tipo de entrevista  
-- Plantilla deseada  
+### 🧠 Extracción inteligente
+El agente identifica automáticamente:
 
-### 🧠 Genera **respuestas ideales** para cada pregunta
-Incluye:
+- Tipo de evento (simulacro, contingencia real, prueba técnica)  
+- Fecha y hora  
+- Área involucrada  
+- Responsable  
+- Acciones ejecutadas  
+- Desarrollo del evento  
+- Resultados y hallazgos  
+- Acciones correctivas y preventivas (CAPA)  
 
-- Respuesta modelo  
-- Explicación de criterios correctos  
-- Señales positivas y de alerta  
+### 🧩 Normalización
+Convierte datos heterogéneos en un **formato institucional estandarizado** definido por DRMOCI.
 
-### 📄 Crea documentos automáticamente
-Compila preguntas y respuestas en un **Word institucional**, listo para expediente del candidato.
+### 📄 Generación del informe institucional
+Produce automáticamente:
 
-### 📝 Automatiza el llenado de formularios
-Procesos incluidos:
+- **Resumen ejecutivo**  
+- **Indicadores clave**  
+- **Cronología del evento**  
+- **Hallazgos y desviaciones**  
+- **Acciones CAPA**  
+- **Conclusiones y recomendaciones**  
+- **Anexos (fotos, vídeos, documentos)**  
 
-- Solicitud de empleo  
-- Información salarial  
-- Informe de entrevista  
-- Informe de selección  
+### ✔️ Validación
+Antes de emitir el informe, Ray:
+
+- Verifica campos obligatorios  
+- Confirma coherencia temporal  
+- Identifica ausencias  
+- Garantiza tono institucional  
+
+### 🚀 Entrega y trazabilidad
+Ray:
+
+- Genera el informe en **plantilla institucional Word/PDF**  
+- Lo guarda en **SharePoint**  
+- Envía copia automática a la Dirección DRMOCI mediante Power Automate  
 
 ---
 
 ## 🧠 Contexto y necesidad
 <a id="contexto-y-necesidad"></a>
 
-Antes del agente:
+Antes de Ray:
 
-- Los analistas preparaban manualmente entrevistas y formularios.  
-- Se redactaban reportes desde cero sin plantilla.  
-- Había inconsistencia entre entrevistas similares.  
+- Cada área redactaba notas en formatos distintos  
+- La consolidación manual tomaba horas o días  
+- Había riesgo de inconsistencia y pérdida de información  
+- No existía un mecanismo estándar de reporte
 
-La necesidad institucional era:
+Con Ray:
 
-- **Estandarizar entrevistas**
-- **Ahorrar tiempo operativo**
-- **Generar documentos automáticos**
-- **Centralizar información en expedientes digitales**
+- Se automatiza la consolidación  
+- Se estandariza el documento institucional  
+- Se evita el retrabajo  
+- Se asegura trazabilidad mediante SharePoint  
 
-Basado en documentos:  
-*Paso a Paso.docx* — *Cambios_Minuta_Daniela_17072025.docx*
+Este enfoque está alineado con buenas prácticas revisadas en sesiones internas de **plantillas, orquestación de agentes y reportes institucionales**.
 
 ---
 
 ## 🛠️ Historia y desarrollo
 <a id="historia-y-desarrollo"></a>
 
-El agente fue desarrollado en colaboración con:
+El desarrollo incluyó:
 
-- **Daniela Rondón** (responsable de proceso)
-- Laboratorio de Innovación (InnovaLab)
+- Revisión de necesidades con el equipo DRMOCI  
+- Diseño de prompts guiados para los encargados de área  
+- Incorporación de validaciones automáticas  
+- Creación de plantilla institucional con secciones estandarizadas  
+- Conexión con **Power Automate** para generar informes  
+- Integración con **SharePoint** para trazabilidad  
+- Pruebas con datos reales de simulacros y eventos
 
-Fuentes utilizadas:
+Discusión adicional:
 
-- Lineamientos corporativos de entrevistas  
-- Plantillas institucionales de selección  
-- Requerimientos legales y normativos  
-
-Iteraciones realizadas:
-
-- Ajuste de tono y estilo de preguntas  
-- Inclusión de respuestas ideales  
-- Diseño del Word final para expediente  
-- Validaciones con usuarios de Capital Humano  
-
-
+- Incorporar gráficos automáticos en el futuro (por trimestre, por sede, etc.)  
 
 ---
 
 ## 🧠 ¿Qué lo hace especial?
 
-- Estándares homogéneos para todo el proceso de entrevistas  
-- Preguntas basadas en competencias  
-- Respuestas ideales explicadas  
-- Generación automática de documentos  
-- Integración completa con flujos M365  
-- Facilita auditoría, trazabilidad y archivo digital  
+* Automatiza una tarea operativa crítica  
+* Elimina consolidación manual  
+* Asegura homogeneidad en todos los reportes  
+* Provee trazabilidad completa en SharePoint  
+* Escalable a múltiples tipos de reportes de continuidad de negocio  
 
 ---
 
@@ -131,13 +149,12 @@ Iteraciones realizadas:
 
 ```mermaid
 flowchart LR
-    U[Usuario] --> A[Asistente de Entrevistas]
-    A --> D[Datos del puesto<br>Descripción del cargo]
-    U --> P[Preferencias del usuario<br>Número de preguntas / Tipo de entrevista]
-    A --> G[Generación de guion<br>Preguntas + Respuestas ideales]
-    G --> W[Documento Word<br>Guion o Informe]
-    W --> SP[SharePoint<br>Expediente del candidato]
-    SP --> U2[Archivo listo para uso]
+    U[Encargados de área] --> R[Ray]
+    R --> E[Extracción inteligente<br>Entidades y datos]
+    E --> N[Normalización<br>Formato institucional]
+    N --> W[Generación de informe<br>Plantilla Word/PDF]
+    W --> SP[SharePoint DRMOCI<br>Registro y versionado]
+    SP --> D[Dirección DRMOCI<br>Revisión del informe]
 ```
 
 ---
@@ -146,22 +163,58 @@ flowchart LR
 
 ```mermaid
 sequenceDiagram
-    participant Usuario
-    participant Asistente
-    participant Plantillas as Plantillas CH
-    participant Word as Documento Word
-    participant SP as SharePoint
+    participant Encargado as Encargado de área
+    participant Ray as Agente Ray
+    participant PA as Power Automate
+    participant Word as Documento institucional
+    participant SP as SharePoint DRMOCI
+    participant Direccion as Dirección DRMOCI
 
-    Usuario->>Asistente: Solicita guion o formulario
-    Asistente->>Usuario: Pide descripción y preferencias
-    Usuario->>Asistente: Envía información
-    Asistente->>Plantillas: Selecciona plantilla adecuada
-    Plantillas-->>Asistente: Devuelve estructura
-    Asistente->>Word: Genera preguntas + respuestas ideales
-    Word-->>Asistente: Documento final
-    Asistente->>SP: Guarda documento en expediente del candidato
-    SP-->>Usuario: Archivo disponible para descarga
+    Encargado->>Ray: Carga notas del evento
+    Ray-->>Encargado: Solicita campos faltantes y verificaciones
+    Encargado->>Ray: Completa la información
+    Ray->>Ray: Extrae datos clave y normaliza contenido
+    Ray->>PA: Envía datos para generar informe institucional
+    PA->>Word: Construye documento en plantilla oficial
+    Word-->>PA: Documento final generado
+    PA->>SP: Guarda archivo con metadatos y rastreo
+    PA->>Direccion: Envía informe por correo
+    Direccion-->>SP: Revisa archivo y comentarios
 ```
+
+---
+
+## 🧱 Flujo funcional
+<a id="flujo-funcional"></a>
+
+1. **Carga de notas**  
+2. **Extracción automática de entidades y datos clave**  
+3. **Normalización según plantilla institucional**  
+4. **Validaciones corporativas (coherencia + completitud)**  
+5. **Generación de reporte Word/PDF**  
+6. **Registro en SharePoint con metadatos**  
+7. **Envío automático para revisión**  
+
+---
+
+## 🧾 Plantilla institucional
+<a id="plantilla-institucional"></a>
+
+La plantilla del informe incluye:
+
+- Portada del evento  
+- Resumen ejecutivo  
+- Ficha técnica del simulacro/contingencia  
+- Cronología detallada  
+- Hallazgos y desviaciones  
+- Indicadores clave:
+  - Participación  
+  - Tiempo de evacuación / control  
+  - Cumplimiento de protocolo  
+- Acciones CAPA  
+- Lecciones aprendidas  
+- Recomendaciones  
+- Anexos (fotos, videos, evidencias)  
 
 ---
 
@@ -169,53 +222,59 @@ sequenceDiagram
 <a id="guia-de-prompts"></a>
 
 ### ✔️ Rol del sistema
-Agente institucional para automatizar entrevistas y formularios de selección.
+Agente institucional para consolidación y generación de reportes de simulacros y contingencias.
 
 ### ✔️ Rol del usuario
-Solicitar preguntas, respuestas ideales o documentos.
+Encargados de área que reportan eventos.
 
 ### ✔️ Restricciones
-- Mantener tono profesional, corporativo y neutral.  
-- Utilizar solo plantillas oficiales.  
-- No generar preguntas discriminatorias.  
+- No inventar información  
+- Mantener estilo formal corporativo  
+- Solicitar información faltante  
+- Validar coherencia temporal y de datos  
 
 **Ejemplo de prompt interno:**
 
 ```md
-Eres el Asistente de Entrevistas para Capital Humano.
-Generas guiones, preguntas, respuestas ideales y documentos institucionales
-basados en la descripción del puesto y lineamientos corporativos.
-Debes mantener un estilo formal y profesional.
+Eres Ray, agente institucional para reportes de simulacros y contingencias.
+Tu tarea es extraer información clave de notas cargadas por los responsables,
+normalizarla según la plantilla corporativa y generar un informe institucional.
+Debes validar campos obligatorios, asegurar claridad y mantener tono formal.
 ```
 
 ---
 
-## ✅ Pruebas y calidad
+## 🚀 Pruebas y calidad
 <a id="pruebas-y-calidad"></a>
 
-- Verificación de preguntas vs competencias corporativas  
-- Calidad de respuestas ideales  
-- Alineación con *Paso a Paso.docx*  
-- Validación del documento Word final  
-- Pruebas de integración con SharePoint  
-- Revisión por **Daniela Rondón**  
+Pruebas realizadas:
+
+- Integración con Power Automate  
+- Validación de extracción de información  
+- Pruebas con notas reales de contingencias  
+- Ensamblado de informes en Word  
+- Validación de metadatos en SharePoint  
+- Revisión con el equipo DRMOCI  
 
 ---
 
 ## ❓ FAQ
 <a id="faq"></a>
 
-**¿Puede generar entrevistas técnicas?**  
-Sí, si el usuario provee descripción o requisitos.
+**¿Qué tipo de eventos procesa Ray?**  
+Simulacros, contingencias reales y pruebas operativas.
 
-**¿Genera respuestas ideales automáticamente?**  
-Sí, basadas en criterios de alta calidad.
+**¿Puede aceptar cualquier formato de nota?**  
+Sí: texto, Word, PDF o copia desde correo.
 
-**¿Dónde se guarda el documento?**  
-En el expediente del candidato en SharePoint.
+**¿Dónde se guardan los informes?**  
+En la biblioteca oficial de SharePoint de DRMOCI.
 
-**¿Es posible personalizar el número de preguntas?**  
-Totalmente.
+**¿Incluye indicadores automáticos?**  
+Sí, calcula participación, tiempos y hallazgos clave.
+
+**¿Puede escalarse a otros reportes?**  
+Sí, puede ampliarse a auditorías internas y continuidad de negocio.
 
 ---
 
@@ -227,4 +286,4 @@ Proyecto bajo licencia **MIT**. Consulta `LICENSE`.
 ---
 
 ### Créditos
-Hecho con ❤️ por Christopher Acosta, Daniela Rondón y el Laboratorio de Innovación (InnovaLab).
+Hecho con ❤️ por la **Dirección de Riesgo Operacional y Control Interno (DRMOCI)** y el **Laboratorio de Innovación CAF — Raymond Arteaga**.
